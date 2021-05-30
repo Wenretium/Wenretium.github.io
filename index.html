@@ -152,6 +152,83 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Hello Blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/05/31/Hello%20Blog/">配环境时那些奇怪的报错</a>
+    </h1>
+  
+
+        
+        <a href="/2021/05/31/Hello%20Blog/" class="archive-article-date">
+  	<time datetime="2021-05-30T16:22:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-31</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-ImportError-cannot-import-name-‘NoReturn’"><a href="#1-ImportError-cannot-import-name-‘NoReturn’" class="headerlink" title="1. ImportError: cannot import name ‘NoReturn’"></a>1. ImportError: cannot import name ‘NoReturn’</h2><p>python3.6下使用pip时报错：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;/home/wangyatian/miniconda3/envs/DSFD_env/bin/pip&quot;, line 6, in &lt;module&gt;</span><br><span class="line">    from pip._internal.cli.main import main</span><br><span class="line">  File &quot;/home/wangyatian/miniconda3/envs/DSFD_env/lib/python3.6/site-packages/pip/_internal/cli/main.py&quot;, line 9, in &lt;module&gt;</span><br><span class="line">    from pip._internal.cli.autocompletion import autocomplete</span><br><span class="line">  File &quot;/home/wangyatian/miniconda3/envs/DSFD_env/lib/python3.6/site-packages/pip/_internal/cli/autocompletion.py&quot;, line 10, in &lt;module&gt;</span><br><span class="line">    from pip._internal.cli.main_parser import create_main_parser</span><br><span class="line">  File &quot;/home/wangyatian/miniconda3/envs/DSFD_env/lib/python3.6/site-packages/pip/_internal/cli/main_parser.py&quot;, line 8, in &lt;module&gt;</span><br><span class="line">    from pip._internal.cli import cmdoptions</span><br><span class="line">  File &quot;/home/wangyatian/miniconda3/envs/DSFD_env/lib/python3.6/site-packages/pip/_internal/cli/cmdoptions.py&quot;, line 30, in &lt;module&gt;</span><br><span class="line">    from pip._internal.utils.hashes import STRONG_HASHES</span><br><span class="line">  File &quot;/home/wangyatian/miniconda3/envs/DSFD_env/lib/python3.6/site-packages/pip/_internal/utils/hashes.py&quot;, line 2, in &lt;module&gt;</span><br><span class="line">    from typing import TYPE_CHECKING, BinaryIO, Dict, Iterator, List, NoReturn</span><br><span class="line">ImportError: cannot import name &#x27;NoReturn&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>解决方法：重装python版本，从3.6.0更换为3.6.5（没有试过3.6的其他版本）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install python==3.6.5</span><br></pre></td></tr></table></figure>
+
+<p>再次使用pip时会有以下警告，但是好歹能用了。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">WARNING: Value for scheme.headers does not match. Please report this to &lt;https://github.com/pypa/pip/issues/9617&gt;</span><br><span class="line">distutils: /home/wangyatian/miniconda3/envs/DSFD_env/include/python3.6m/UNKNOWN</span><br><span class="line">sysconfig: /home/wangyatian/miniconda3/envs/DSFD_env/include/python3.6m</span><br><span class="line">WARNING: Additional context:</span><br><span class="line">user = False</span><br><span class="line">home = None</span><br><span class="line">root = None</span><br><span class="line">prefix = None</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-import-torch报错"><a href="#2-import-torch报错" class="headerlink" title="2. import torch报错"></a>2. import torch报错</h2><p>python==3.6.0</p>
+<p>pytorch==1.8.0</p>
+<p>import torch报错</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> File &quot;/home/wangyatian/miniconda3/envs/python36/lib/python3.6/site-packages/torch/init.py&quot;, line 196, in &lt;module&gt;</span><br><span class="line">    from torch._C import *</span><br><span class="line">ImportError: /home/wangyatian/miniconda3/envs/python36/lib/python3.6/site-packages/torch/lib/libtorch_python.so: undefined symbol: PySlice_Unpack</span><br></pre></td></tr></table></figure>
+
+<p>将python版本改为3.6.3即可</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/05/31/Hello%20Blog/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
