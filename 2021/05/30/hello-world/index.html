@@ -175,7 +175,38 @@
         <a href="/2021/05/30/hello-world/" class="archive-article-date">
   	<time datetime="2021-05-30T15:50:53.969Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-30</time>
 </a>
-        
+     
+
+
+
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">75字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">1分</span>
+      </span>
+    </span>
+</div>
+
+   
+
+
+
+    <span class="archive-article-date">
+        阅读量 <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+
       </header>
     
     <div class="article-entry" itemprop="articleBody">
@@ -326,6 +357,7 @@
 
   
 
+
   
 
   
@@ -339,9 +371,39 @@
     <div id="footer-info">
     	<div class="footer-left">
     		&copy; 2021 Wenretium
+		
     	</div>
+
       	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+
+		<span id="timeDate">载入天数...</span>
+		
+		<script>
+		var now = new Date(); 
+		function createtime() { 
+		var grt= new Date("5/30/2021 22:00:00");//此处修改你的建站时间或者网站上线时间 
+		now.setTime(now.getTime()+250); 
+		days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+		hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+		if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+		mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+		seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+		snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+		document.getElementById("timeDate").innerHTML = "破壳 "+dnum+" 天 "; 
+		
+	} 
+	setInterval("createtime()",250);
+		</script>
+<span class="post-meta-divider">|</span>
+
+      		<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      		<span id="busuanzi_container_site_pv">
+                总访问量 <span id="busuanzi_value_site_pv"></span>
+            </span>
+            <span class="post-meta-divider">|</span>
+            <span id="busuanzi_container_site_uv">
+                访客数 <span id="busuanzi_value_site_uv"></span>
+            </span>
       	</div>
     </div>
   </div>
