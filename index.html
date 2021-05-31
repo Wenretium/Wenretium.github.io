@@ -160,55 +160,7 @@
     <div class="article-entry" itemprop="articleBody">
 
 
-	
-		<h1 id="用GAN生成MNIST手写数字"><a href="#用GAN生成MNIST手写数字" class="headerlink" title="用GAN生成MNIST手写数字"></a>用GAN生成MNIST手写数字</h1><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>最近偶然间在CSDN看见一个有意思的小项目：用GAN来生成MNIST手写数字。这个小项目既是之前MNIST分类问题的拓展，又能尝试亲手写一个GAN，还挺有意义。</p>
-<p>代码参考自<a target="_blank" rel="noopener" href="https://blog.csdn.net/happyday_d/article/details/84961175">这篇博客</a>，它的整体结构都很清晰，值得参考。</p>
-<p>但是，在用这份代码时产生了一个问题：</p>
-<p><span><span style="font-family:Verdana, Arial, Helvetica, sans-serif;line-height:19px;text-indent:26px;"><span style="font-size:14px;"><span style="font-family:Arial;line-height:26px;"><br></span></span></span></span></p>
-
-<h3 id="问题：训练时生成器的损失总是较大，且不再下降，生成结果差。"><a href="#问题：训练时生成器的损失总是较大，且不再下降，生成结果差。" class="headerlink" title="问题：训练时生成器的损失总是较大，且不再下降，生成结果差。"></a>问题：训练时生成器的损失总是较大，且不再下降，生成结果差。</h3><h4 id="原因分析："><a href="#原因分析：" class="headerlink" title="原因分析："></a>原因分析：</h4><p>给判别器喂real数据时出现问题。因为输入MNIST图像是黑底白字的，转换为tensor后，黑色像素对应的值为0，导致tensor中存在大量0。这些tensor输入神经网络后，造成神经元的死亡，无法继续训练。</p>
-<p>将tensor值从[0,1]映射为[-1,1]后，输入tensor的值就是一个含大量-1的矩阵，就能正常训练了。（可打印进行验证）</p>
-<h4 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h4><p>将代码</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">logits_real = D_net(real_data)</span><br></pre></td></tr></table></figure>
-
-<p>改为</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">logits_real = D_net(2 * (real_data - 0.5)) # 从[0,1]映射为[-1,1]</span><br></pre></td></tr></table></figure>
-
-<p>训练效果对比：</p>
-<ul>
-<li>前</li>
-</ul>
-<p><img src="/20210408134126211.png" alt="在这里插入图片描述"></p>
-<p>越训练图像越模糊，一定是训练过程出了问题：</p>
-<center class="half">
-    <img src="/20210408134554549.png" width="200"><img src="/20210408134424125.png" width="200"><img src="/20210408134554551.png" width="200">
-</center>
-
-
-
-
-<ul>
-<li>后</li>
-</ul>
-<p><img src="/20210408135114712.png" alt="在这里插入图片描述"></p>
-<p>正常训练了！！</p>
-<center class="half">
-    <img src="/20210408135206394.png" width="200"><img src="/20210408135206391.png" width="200"><img src="/20210408135206386.png" width="200">
-</center>
-
-
-<p><span><span style="font-family:Verdana, Arial, Helvetica, sans-serif;line-height:19px;text-indent:26px;"><span style="font-size:14px;"><span style="font-family:Arial;line-height:26px;"><br></span></span></span></span></p>
-
-<h3 id="模型分析"><a href="#模型分析" class="headerlink" title="模型分析"></a>模型分析</h3><h4 id="Generator"><a href="#Generator" class="headerlink" title="Generator"></a>Generator</h4><p>Linear–&gt;ReLU–&gt;BatchNorm–&gt;Linear–&gt;ReLU–&gt;BatchNorm–&gt;reshape–&gt;ConvTranspose–&gt;ReLU–&gt;BatchNorm–&gt;ConvTranspose–&gt;Tanh</p>
-<h4 id="Discriminator"><a href="#Discriminator" class="headerlink" title="Discriminator"></a>Discriminator</h4><p>conv–&gt;LReLU–&gt;MaxPool–&gt;conv–&gt;LReLU–&gt;MaxPool–&gt;reshape–&gt;Linear–&gt;LReLU–&gt;Linear</p>
-<p><span><span style="font-family:Verdana, Arial, Helvetica, sans-serif;line-height:19px;text-indent:26px;"><span style="font-size:14px;"><span style="font-family:Arial;line-height:26px;"><br></span></span></span></span></p>
-
-
-<h3 id="摸鱼笔记"><a href="#摸鱼笔记" class="headerlink" title="摸鱼笔记"></a>摸鱼笔记</h3><ol>
-<li>什么结构适合做生成，什么结构适合做鉴别，还需要积累知识。</li>
-<li>观察生成结果，可以发现GAN的一些有趣的特性。<br>长得像“8”的“0”<br><img src="/20210408135538876.png" alt="在这里插入图片描述"><br>想长成”0”的“6”<br><img src="/20210408135643913.png" alt="在这里插入图片描述"><br>这个是…斯凯奇打钱？？？<br><img src="/20210408135828871.png" alt="在这里插入图片描述"><br>甚至学会了竖中指……<br><img src="/20210408135938325.png" alt="在这里插入图片描述"><br>可见我们的GAN宝宝在学习的时候，是完全不知道自己在学什么的。生成器在判别损失的引导鞭策下，去生成那些”看上去更可能真实”的图像。我觉得是因为模型本身的局限性，没办法避免这些奇奇怪怪符号的产生，因为它们在计算机看来的确像是一些“手写数字”（maybe火星人的手写数字）。按照我的猜想，模型的设计使得计算机不能完美地区分这些符号与真正的手写数字间的区别，那么提升模型的性能、优化模型的结构，应该能够提升生成结果的质量吧！（挖坑中)</li>
-</ol>
-
+			<h1 id="用GAN生成MNIST手写数字"><a href="#用GAN生成MNIST手写数字" class="headerlink" title="用GAN生成MNIST手写数字"></a>用GAN生成MNIST手写数字</h1><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>最近偶然间在CSDN看见一个有意思的小项目：用GAN来生成MNIST手写数字。这个小项目既是之前MNIST分类问题的拓展，又能尝试亲手写一个GAN，还挺有意义。</p>
 	
 
 
