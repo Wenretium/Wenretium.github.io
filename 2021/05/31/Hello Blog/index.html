@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://Wenretium.github.io">
   <title>配环境时那些奇怪的报错 | Wenretium&#39;s Space</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. ImportError: cannot import name ‘NoReturn’python3.6下使用pip时报错： 1234567891011121314Traceback (most recent call last):  File &quot;&#x2F;home&#x2F;wangyatian&#x2F;miniconda3&#x2F;envs&#x2F;DSFD_env&#x2F;bin&#x2F;pip&quot;, line 6, in &amp;">
+  <meta name="description" content="记录一下。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="配环境时那些奇怪的报错">
 <meta property="og:url" content="https://wenretium.github.io/2021/05/31/Hello%20Blog/index.html">
 <meta property="og:site_name" content="Wenretium&#39;s Space">
-<meta property="og:description" content="1. ImportError: cannot import name ‘NoReturn’python3.6下使用pip时报错： 1234567891011121314Traceback (most recent call last):  File &quot;&#x2F;home&#x2F;wangyatian&#x2F;miniconda3&#x2F;envs&#x2F;DSFD_env&#x2F;bin&#x2F;pip&quot;, line 6, in &amp;">
+<meta property="og:description" content="记录一下。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-05-30T16:22:16.000Z">
-<meta property="article:modified_time" content="2021-05-31T07:16:48.258Z">
+<meta property="article:modified_time" content="2021-05-31T07:36:46.419Z">
 <meta property="article:author" content="Wenretium">
 <meta name="twitter:card" content="summary">
   
@@ -180,7 +180,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">375字</span>
+        <span class="post-count">379字</span>
       </span>
     </span>
 
@@ -209,7 +209,10 @@
 
 
 	
-		<h2 id="1-ImportError-cannot-import-name-‘NoReturn’"><a href="#1-ImportError-cannot-import-name-‘NoReturn’" class="headerlink" title="1. ImportError: cannot import name ‘NoReturn’"></a>1. ImportError: cannot import name ‘NoReturn’</h2><p>python3.6下使用pip时报错：</p>
+		<p>记录一下。</p>
+<span id="more"></span>
+
+<h2 id="1-ImportError-cannot-import-name-‘NoReturn’"><a href="#1-ImportError-cannot-import-name-‘NoReturn’" class="headerlink" title="1. ImportError: cannot import name ‘NoReturn’"></a>1. ImportError: cannot import name ‘NoReturn’</h2><p>python3.6下使用pip时报错：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;/home/wangyatian/miniconda3/envs/DSFD_env/bin/pip&quot;, line 6, in &lt;module&gt;</span><br><span class="line">    from pip._internal.cli.main import main</span><br><span class="line">  File &quot;/home/wangyatian/miniconda3/envs/DSFD_env/lib/python3.6/site-packages/pip/_internal/cli/main.py&quot;, line 9, in &lt;module&gt;</span><br><span class="line">    from pip._internal.cli.autocompletion import autocomplete</span><br><span class="line">  File &quot;/home/wangyatian/miniconda3/envs/DSFD_env/lib/python3.6/site-packages/pip/_internal/cli/autocompletion.py&quot;, line 10, in &lt;module&gt;</span><br><span class="line">    from pip._internal.cli.main_parser import create_main_parser</span><br><span class="line">  File &quot;/home/wangyatian/miniconda3/envs/DSFD_env/lib/python3.6/site-packages/pip/_internal/cli/main_parser.py&quot;, line 8, in &lt;module&gt;</span><br><span class="line">    from pip._internal.cli import cmdoptions</span><br><span class="line">  File &quot;/home/wangyatian/miniconda3/envs/DSFD_env/lib/python3.6/site-packages/pip/_internal/cli/cmdoptions.py&quot;, line 30, in &lt;module&gt;</span><br><span class="line">    from pip._internal.utils.hashes import STRONG_HASHES</span><br><span class="line">  File &quot;/home/wangyatian/miniconda3/envs/DSFD_env/lib/python3.6/site-packages/pip/_internal/utils/hashes.py&quot;, line 2, in &lt;module&gt;</span><br><span class="line">    from typing import TYPE_CHECKING, BinaryIO, Dict, Iterator, List, NoReturn</span><br><span class="line">ImportError: cannot import name &#x27;NoReturn&#x27;</span><br></pre></td></tr></table></figure>
 
 <p>解决方法：重装python版本，从3.6.0更换为3.6.5（没有试过3.6的其他版本）</p>
