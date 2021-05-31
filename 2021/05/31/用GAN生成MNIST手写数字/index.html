@@ -6,32 +6,32 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://Wenretium.github.io">
-  <title>用GAN生成MNIST手写数字 | Wenretium&#39;s Space</title>
+  <title>Wenretium&#39;s Space</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="前言最近偶然间在CSDN看见一个有意思的小项目：用GAN来生成MNIST手写数字。这个小项目既是之前MNIST分类问题的拓展，又能尝试亲手写一个GAN，还挺有意义。 代码参考自这篇博客，它的整体结构都很清晰，值得参考。 但是，在用这份代码时产生了一个问题：   问题：训练时生成器的损失总是较大，且不再下降，生成结果差。原因分析：给判别器喂real数据时出现问题。因为输入MNIST图像是黑底白字的，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用GAN生成MNIST手写数字">
+<meta property="og:title" content="Wenretium&#39;s Space">
 <meta property="og:url" content="https://wenretium.github.io/2021/05/31/%E7%94%A8GAN%E7%94%9F%E6%88%90MNIST%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/index.html">
 <meta property="og:site_name" content="Wenretium&#39;s Space">
 <meta property="og:description" content="前言最近偶然间在CSDN看见一个有意思的小项目：用GAN来生成MNIST手写数字。这个小项目既是之前MNIST分类问题的拓展，又能尝试亲手写一个GAN，还挺有意义。 代码参考自这篇博客，它的整体结构都很清晰，值得参考。 但是，在用这份代码时产生了一个问题：   问题：训练时生成器的损失总是较大，且不再下降，生成结果差。原因分析：给判别器喂real数据时出现问题。因为输入MNIST图像是黑底白字的，">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://wenretium.github.io/%E7%94%A8GAN%E7%94%9F%E6%88%90MNIST%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/20210408134126211.png">
-<meta property="og:image" content="https://wenretium.github.io/2021/05/31/%E7%94%A8GAN%E7%94%9F%E6%88%90MNIST%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/20210408134554549.png">
-<meta property="og:image" content="https://wenretium.github.io/2021/05/31/%E7%94%A8GAN%E7%94%9F%E6%88%90MNIST%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/20210408134424125.png">
-<meta property="og:image" content="https://wenretium.github.io/2021/05/31/%E7%94%A8GAN%E7%94%9F%E6%88%90MNIST%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/20210408134554551.png">
-<meta property="og:image" content="https://wenretium.github.io/%E7%94%A8GAN%E7%94%9F%E6%88%90MNIST%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/20210408135114712.png">
-<meta property="og:image" content="https://wenretium.github.io/2021/05/31/%E7%94%A8GAN%E7%94%9F%E6%88%90MNIST%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/20210408135206394.png">
-<meta property="og:image" content="https://wenretium.github.io/2021/05/31/%E7%94%A8GAN%E7%94%9F%E6%88%90MNIST%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/20210408135206391.png">
-<meta property="og:image" content="https://wenretium.github.io/2021/05/31/%E7%94%A8GAN%E7%94%9F%E6%88%90MNIST%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/20210408135206386.png">
-<meta property="og:image" content="https://wenretium.github.io/%E7%94%A8GAN%E7%94%9F%E6%88%90MNIST%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/20210408135538876.png">
-<meta property="og:image" content="https://wenretium.github.io/%E7%94%A8GAN%E7%94%9F%E6%88%90MNIST%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/20210408135643913.png">
-<meta property="og:image" content="https://wenretium.github.io/%E7%94%A8GAN%E7%94%9F%E6%88%90MNIST%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/20210408135828871.png">
-<meta property="og:image" content="https://wenretium.github.io/%E7%94%A8GAN%E7%94%9F%E6%88%90MNIST%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/20210408135938325.png">
+<meta property="og:image" content="https://wenretium.github.io/20210408134126211.png">
+<meta property="og:image" content="https://wenretium.github.io/20210408134554549.png">
+<meta property="og:image" content="https://wenretium.github.io/20210408134424125.png">
+<meta property="og:image" content="https://wenretium.github.io/20210408134554551.png">
+<meta property="og:image" content="https://wenretium.github.io/20210408135114712.png">
+<meta property="og:image" content="https://wenretium.github.io/20210408135206394.png">
+<meta property="og:image" content="https://wenretium.github.io/20210408135206391.png">
+<meta property="og:image" content="https://wenretium.github.io/20210408135206386.png">
+<meta property="og:image" content="https://wenretium.github.io/20210408135538876.png">
+<meta property="og:image" content="https://wenretium.github.io/20210408135643913.png">
+<meta property="og:image" content="https://wenretium.github.io/20210408135828871.png">
+<meta property="og:image" content="https://wenretium.github.io/20210408135938325.png">
 <meta property="article:published_time" content="2021-05-31T07:16:00.000Z">
-<meta property="article:modified_time" content="2021-05-31T07:16:31.723Z">
+<meta property="article:modified_time" content="2021-05-31T07:21:18.449Z">
 <meta property="article:author" content="Wenretium">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://wenretium.github.io/%E7%94%A8GAN%E7%94%9F%E6%88%90MNIST%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/20210408134126211.png">
+<meta name="twitter:image" content="https://wenretium.github.io/20210408134126211.png">
   
     <link rel="alternative" href="/atom.xml" title="Wenretium&#39;s Space" type="application/atom+xml">
   
@@ -172,52 +172,6 @@
             <article id="post-用GAN生成MNIST手写数字" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      用GAN生成MNIST手写数字
-    </h1>
-  
-
-        
-        <a href="/2021/05/31/%E7%94%A8GAN%E7%94%9F%E6%88%90MNIST%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/" class="archive-article-date">
-  	<time datetime="2021-05-31T07:16:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-31</time>
-</a>
-     
-
-
-
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">612字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">2分</span>
-      </span>
-    </span>
-</div>
-
-   
-
-
- 
-        <span class="archive-article-date">
-            阅读量 <span id="busuanzi_value_page_pv"></span>
-        </span>
-    
-
-      </header>
-    
     <div class="article-entry" itemprop="articleBody">
 
 
@@ -239,10 +193,10 @@
 <ul>
 <li>前</li>
 </ul>
-<p><img src="/%E7%94%A8GAN%E7%94%9F%E6%88%90MNIST%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/20210408134126211.png" alt="在这里插入图片描述"></p>
+<p><img src="/20210408134126211.png" alt="在这里插入图片描述"></p>
 <p>越训练图像越模糊，一定是训练过程出了问题：</p>
 <center class="half">
-    <img src="/2021/05/31/%E7%94%A8GAN%E7%94%9F%E6%88%90MNIST%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/20210408134554549.png" width="200"><img src="/2021/05/31/%E7%94%A8GAN%E7%94%9F%E6%88%90MNIST%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/20210408134424125.png" width="200"><img src="/2021/05/31/%E7%94%A8GAN%E7%94%9F%E6%88%90MNIST%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/20210408134554551.png" width="200">
+    <img src="/20210408134554549.png" width="200"><img src="/20210408134424125.png" width="200"><img src="/20210408134554551.png" width="200">
 </center>
 
 
@@ -251,10 +205,10 @@
 <ul>
 <li>后</li>
 </ul>
-<p><img src="/%E7%94%A8GAN%E7%94%9F%E6%88%90MNIST%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/20210408135114712.png" alt="在这里插入图片描述"></p>
+<p><img src="/20210408135114712.png" alt="在这里插入图片描述"></p>
 <p>正常训练了！！</p>
 <center class="half">
-    <img src="/2021/05/31/%E7%94%A8GAN%E7%94%9F%E6%88%90MNIST%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/20210408135206394.png" width="200"><img src="/2021/05/31/%E7%94%A8GAN%E7%94%9F%E6%88%90MNIST%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/20210408135206391.png" width="200"><img src="/2021/05/31/%E7%94%A8GAN%E7%94%9F%E6%88%90MNIST%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/20210408135206386.png" width="200">
+    <img src="/20210408135206394.png" width="200"><img src="/20210408135206391.png" width="200"><img src="/20210408135206386.png" width="200">
 </center>
 
 
@@ -267,7 +221,7 @@
 
 <h3 id="摸鱼笔记"><a href="#摸鱼笔记" class="headerlink" title="摸鱼笔记"></a>摸鱼笔记</h3><ol>
 <li>什么结构适合做生成，什么结构适合做鉴别，还需要积累知识。</li>
-<li>观察生成结果，可以发现GAN的一些有趣的特性。<br>长得像“8”的“0”<br><img src="/%E7%94%A8GAN%E7%94%9F%E6%88%90MNIST%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/20210408135538876.png" alt="在这里插入图片描述"><br>想长成”0”的“6”<br><img src="/%E7%94%A8GAN%E7%94%9F%E6%88%90MNIST%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/20210408135643913.png" alt="在这里插入图片描述"><br>这个是…斯凯奇打钱？？？<br><img src="/%E7%94%A8GAN%E7%94%9F%E6%88%90MNIST%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/20210408135828871.png" alt="在这里插入图片描述"><br>甚至学会了竖中指……<br><img src="/%E7%94%A8GAN%E7%94%9F%E6%88%90MNIST%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/20210408135938325.png" alt="在这里插入图片描述"><br>可见我们的GAN宝宝在学习的时候，是完全不知道自己在学什么的。生成器在判别损失的引导鞭策下，去生成那些”看上去更可能真实”的图像。我觉得是因为模型本身的局限性，没办法避免这些奇奇怪怪符号的产生，因为它们在计算机看来的确像是一些“手写数字”（maybe火星人的手写数字）。按照我的猜想，模型的设计使得计算机不能完美地区分这些符号与真正的手写数字间的区别，那么提升模型的性能、优化模型的结构，应该能够提升生成结果的质量吧！（挖坑中)</li>
+<li>观察生成结果，可以发现GAN的一些有趣的特性。<br>长得像“8”的“0”<br><img src="/20210408135538876.png" alt="在这里插入图片描述"><br>想长成”0”的“6”<br><img src="/20210408135643913.png" alt="在这里插入图片描述"><br>这个是…斯凯奇打钱？？？<br><img src="/20210408135828871.png" alt="在这里插入图片描述"><br>甚至学会了竖中指……<br><img src="/20210408135938325.png" alt="在这里插入图片描述"><br>可见我们的GAN宝宝在学习的时候，是完全不知道自己在学什么的。生成器在判别损失的引导鞭策下，去生成那些”看上去更可能真实”的图像。我觉得是因为模型本身的局限性，没办法避免这些奇奇怪怪符号的产生，因为它们在计算机看来的确像是一些“手写数字”（maybe火星人的手写数字）。按照我的猜想，模型的设计使得计算机不能完美地区分这些符号与真正的手写数字间的区别，那么提升模型的性能、优化模型的结构，应该能够提升生成结果的质量吧！（挖坑中)</li>
 </ol>
 
 	
