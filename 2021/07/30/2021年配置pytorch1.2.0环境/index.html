@@ -6,15 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://Wenretium.github.io">
-  <title>Category: 突发奇想 | Wenretium&#39;s Space</title>
+  <title>2021年配置pytorch1.2.0环境 | Wenretium&#39;s Space</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Wenretium&#39;s Space">
-<meta property="og:url" content="https://wenretium.github.io/categories/%E7%AA%81%E5%8F%91%E5%A5%87%E6%83%B3/index.html">
+  <meta name="description" content="因为之前重装过电脑的conda，要跑一个项目（HLA），所以要重新配置一次pytorch&lt;&#x3D;1.2.0的环境。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2021年配置pytorch1.2.0环境">
+<meta property="og:url" content="https://wenretium.github.io/2021/07/30/2021%E5%B9%B4%E9%85%8D%E7%BD%AEpytorch1.2.0%E7%8E%AF%E5%A2%83/index.html">
 <meta property="og:site_name" content="Wenretium&#39;s Space">
+<meta property="og:description" content="因为之前重装过电脑的conda，要跑一个项目（HLA），所以要重新配置一次pytorch&lt;&#x3D;1.2.0的环境。">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://wenretium.github.io/2021%E5%B9%B4%E9%85%8D%E7%BD%AEpytorch1.2.0%E7%8E%AF%E5%A2%83/1627632527.jpg">
+<meta property="og:image" content="https://wenretium.github.io/2021%E5%B9%B4%E9%85%8D%E7%BD%AEpytorch1.2.0%E7%8E%AF%E5%A2%83/image-20210730160640378.png">
+<meta property="og:image" content="https://wenretium.github.io/2021%E5%B9%B4%E9%85%8D%E7%BD%AEpytorch1.2.0%E7%8E%AF%E5%A2%83/image-20210730160527407.png">
+<meta property="og:image" content="https://wenretium.github.io/2021%E5%B9%B4%E9%85%8D%E7%BD%AEpytorch1.2.0%E7%8E%AF%E5%A2%83/image-20210730161356150.png">
+<meta property="article:published_time" content="2021-07-30T08:27:00.000Z">
+<meta property="article:modified_time" content="2021-07-30T08:27:44.014Z">
 <meta property="article:author" content="Wenretium">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wenretium.github.io/2021%E5%B9%B4%E9%85%8D%E7%BD%AEpytorch1.2.0%E7%8E%AF%E5%A2%83/1627632527.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Wenretium&#39;s Space" type="application/atom+xml">
   
@@ -156,20 +165,215 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article class="article article-type-post show">
-  <header class="article-header" style="border-bottom: 1px solid #ccc">
-  <h1 class="article-title" itemprop="name">
+            <article id="post-2021年配置pytorch1.2.0环境" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-  </h1>
-  </header>
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      2021年配置pytorch1.2.0环境
+    </h1>
+  
+
+        
+        <a href="/2021/07/30/2021%E5%B9%B4%E9%85%8D%E7%BD%AEpytorch1.2.0%E7%8E%AF%E5%A2%83/" class="archive-article-date">
+  	<time datetime="2021-07-30T08:27:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-30</time>
+</a>
+     
+
+
+
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">826字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">3分</span>
+      </span>
+    </span>
+</div>
+
+   
+
+
+ 
+        <span class="archive-article-date">
+            阅读量 <span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+
+
+	
+		<p>因为之前重装过电脑的conda，要跑一个项目（HLA），所以要重新配置一次pytorch&lt;=1.2.0的环境。</p>
+<span id="more"></span>
+<p>应该是这个项目用了一些旧代码，forward过程是静态的，如果pytorch版本较高，就会报错 <code>RuntimeError: Legacy autograd function with non-static forward method is deprecated. Please use new-style autograd function with static forward method</code>。</p>
+<h2 id="优先用官网指令"><a href="#优先用官网指令" class="headerlink" title="优先用官网指令"></a>优先用官网指令</h2><p>conda 和 pip 都尝试过，均显示寻找不到对应版本。</p>
+<p>因为是官网上还在的指令，找不到就很奇怪。。。</p>
+<p>尝试换源，用国内源，也找不到。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># CUDA 9.2</span><br><span class="line">conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=9.2 -c pytorch</span><br><span class="line"></span><br><span class="line"># CUDA 10.0</span><br><span class="line">conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=10.0 -c pytorch</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># CUDA 10.0</span><br><span class="line">pip install torch==1.2.0 torchvision==0.4.0</span><br><span class="line"></span><br><span class="line"># CUDA 9.2</span><br><span class="line">pip install torch==1.2.0+cu92 torchvision==0.4.0+cu92 -f https://download.pytorch.org/whl/torch_stable.html</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="额外下载与安装"><a href="#额外下载与安装" class="headerlink" title="额外下载与安装"></a>额外下载与安装</h2><p>好在，在其他地方发现了这个地址<a target="_blank" rel="noopener" href="https://download.pytorch.org/whl/torch/%E3%80%82%E9%87%8C%E9%9D%A2%E6%98%AFpytorch%E5%AE%98%E7%BD%91%E6%8F%90%E4%BE%9B%E7%9A%84%E5%8C%85%EF%BC%8C%E4%B9%9F%E5%B0%B1%E6%98%AF%E4%B8%8A%E9%9D%A2%E6%8C%87%E4%BB%A4%E6%90%9C%E7%B4%A2%E4%B8%8D%E5%87%BA%E6%9D%A5%E7%9A%84%E5%8C%85%E3%80%82">https://download.pytorch.org/whl/torch/。里面是pytorch官网提供的包，也就是上面指令搜索不出来的包。</a></p>
+<p>找到我需要的版本（我win系统的cuda是11.1的，但是每次conda都默认给我装cuda9.2版本。高版本应该能向低兼容，为了省事，我也选择cuda9.2。）</p>
+<p><img src="/2021%E5%B9%B4%E9%85%8D%E7%BD%AEpytorch1.2.0%E7%8E%AF%E5%A2%83/1627632527.jpg" alt="1627632527"></p>
+<p><img src="/2021%E5%B9%B4%E9%85%8D%E7%BD%AEpytorch1.2.0%E7%8E%AF%E5%A2%83/image-20210730160640378.png" alt="image-20210730160640378"></p>
+<p>这里有两种gpu版的包，一种标注cu92，另一种没有标注。我使用的是上面没有标注的。</p>
+<p>最后检查环境，发现里面有cudatoolkit==9.2，不知道是哪个步骤自动下的。</p>
+<p>检查torch情况，一切完美！</p>
+<p><img src="/2021%E5%B9%B4%E9%85%8D%E7%BD%AEpytorch1.2.0%E7%8E%AF%E5%A2%83/image-20210730160527407.png" alt="image-20210730160527407"></p>
+<h2 id="torch版本被更改"><a href="#torch版本被更改" class="headerlink" title="torch版本被更改"></a>torch版本被更改</h2><p>因为代码有用到torchvision，于是我又用指令自动下载了torchvision。却发现，torch版本又被改变了！一旦更改为高版本，就又不符合要求了。</p>
+<p>把自动下载的torchvision卸载，指定下载官方给出的版本torchvision==0.4.0。conda显示找不到0.4.0版本，pip也找不到，但是打印了有的版本：</p>
+<p><img src="/2021%E5%B9%B4%E9%85%8D%E7%BD%AEpytorch1.2.0%E7%8E%AF%E5%A2%83/image-20210730161356150.png" alt="image-20210730161356150"></p>
+<p>于是安装torchvision==0.4.1，安装成功，代码成功运行！</p>
+<h2 id="安装时的注意点"><a href="#安装时的注意点" class="headerlink" title="安装时的注意点"></a>安装时的注意点</h2><p>也发现了配环境中，一些以前的困惑。</p>
+<h3 id="更改环境中包的版本"><a href="#更改环境中包的版本" class="headerlink" title="更改环境中包的版本"></a>更改环境中包的版本</h3><p>结合以往的经验，安装各种包时会出现一些奇怪现象：比如卸载了某个包，<code>conda list</code> 却还在；比如安装了某个版本的包，<code>conda list</code> 却显示还是原版本；<code>print(torch.__version__)</code> 与<code>conda list</code> 不一致等等。</p>
+<p>分析原因，conda可以下载某个包，pip可以下载某个包，两处下载的不同版本的包竟然是共存的！而且有着奇怪的优先关系。</p>
+<h4 id="推荐处理方法"><a href="#推荐处理方法" class="headerlink" title="推荐处理方法"></a>推荐处理方法</h4><p>如果想更改某个包的版本，尤其是torch这种比较大且比较重要的包，先用 <code>conda uninstall torch</code>  <code>pip uninstall torch</code>  卸载干净，直到<code>conda list</code> 和  <code>import torch</code> 都检测不到包为止。注意有时简单uninstall不能检测到包，需要指定uninstall torch的版本。</p>
+<h3 id="往环境中安装新包的速度很快"><a href="#往环境中安装新包的速度很快" class="headerlink" title="往环境中安装新包的速度很快"></a>往环境中安装新包的速度很快</h3><p>有时往环境中安装新包，发现速度非常快，一下子就显示成功安装，而且没有出进度条。我合理猜测是我的conda中其他环境中，有一模一样的包，于是可以直接用（不知道是直接引用其他环境，还是复制一份过来）。</p>
+
+	
+
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/深度学习//" class="article-tag-list-link color5">深度学习</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/深度学习/防坑指南//" class="article-tag-list-link color5">防坑指南</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://wenretium.github.io/2021/07/30/2021%E5%B9%B4%E9%85%8D%E7%BD%AEpytorch1.2.0%E7%8E%AF%E5%A2%83/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
 
   
-  <div class="category-all-page">
-    <h2>共计&nbsp;6&nbsp;个分类</h2>
-    <ul class="category-list-item-list"><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a><span class="category-list-item-list-count">3</span><ul class="category-list-item-list-child"><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%91%B8%E9%B1%BC%E6%97%A5%E5%BF%97/">摸鱼日志</a><span class="category-list-item-list-count">1</span></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E9%98%B2%E5%9D%91%E6%8C%87%E5%8D%97/">防坑指南</a><span class="category-list-item-list-count">2</span></li></ul></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E7%AA%81%E5%8F%91%E5%A5%87%E6%83%B3/">突发奇想</a><span class="category-list-item-list-count">1</span></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E7%BB%84%E4%BC%9A%E8%AE%B0%E5%BD%95/">组会记录</a><span class="category-list-item-list-count">2</span></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/">随便写写</a><span class="category-list-item-list-count">1</span></li></ul>
-  </div>
+<nav id="article-nav">
   
-</article>
+  
+    <a href="/2021/06/15/6.15%20%E7%BB%84%E4%BC%9A%E8%AE%B0%E5%BD%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">6.15 组会记录</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
+  
+
+  
+
+
+  
+
+  
+
+
           </div>
         </div>
       </div>
@@ -220,10 +424,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",
