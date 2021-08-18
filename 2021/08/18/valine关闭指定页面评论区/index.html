@@ -15,12 +15,15 @@
 <meta property="og:site_name" content="Wenretium&#39;s Space">
 <meta property="og:description" content="通过comments: false无法控制评论区的关闭。在网上没有见到踩过这个坑的，故记录之。">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://wenretium.github.io/2021/08/18/valine%E5%85%B3%E9%97%AD%E6%8C%87%E5%AE%9A%E9%A1%B5%E9%9D%A2%E8%AF%84%E8%AE%BA%E5%8C%BA/1.png">
+<meta property="og:image" content="https://wenretium.github.io/2021/08/18/valine%E5%85%B3%E9%97%AD%E6%8C%87%E5%AE%9A%E9%A1%B5%E9%9D%A2%E8%AF%84%E8%AE%BA%E5%8C%BA/2.png">
 <meta property="article:published_time" content="2021-08-18T07:05:39.000Z">
-<meta property="article:modified_time" content="2021-08-18T07:21:19.716Z">
+<meta property="article:modified_time" content="2021-08-18T08:31:36.722Z">
 <meta property="article:author" content="Wenretium">
 <meta property="article:tag" content="博客搭建">
 <meta property="article:tag" content="踩坑">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wenretium.github.io/2021/08/18/valine%E5%85%B3%E9%97%AD%E6%8C%87%E5%AE%9A%E9%A1%B5%E9%9D%A2%E8%AF%84%E8%AE%BA%E5%8C%BA/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Wenretium&#39;s Space" type="application/atom+xml">
   
@@ -186,7 +189,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">179字</span>
+        <span class="post-count">175字</span>
       </span>
     </span>
 
@@ -217,9 +220,8 @@
 	
 		<p>通过<code>comments: false</code>无法控制评论区的关闭。在网上没有见到踩过这个坑的，故记录之。</p>
 <span id="more"></span>
-
 <p>昨天给我的博客增加了valine评论系统，今天继续优化时，想将分类页面的评论区关闭，因为它作为一个页面也带有评论区。</p>
-<p>![1.png)</p>
+<p><img src="/2021/08/18/valine%E5%85%B3%E9%97%AD%E6%8C%87%E5%AE%9A%E9%A1%B5%E9%9D%A2%E8%AF%84%E8%AE%BA%E5%8C%BA/1.png" alt></p>
 <p>网上都是说，直接在文章前添加设置</p>
 <blockquote>
 <p>comments: false</p>
@@ -227,7 +229,7 @@
 <p>但我设置了后仍未有效。</p>
 <p>后来经过排查，我这个文件里的设置有问题：<code>themes\yilia\layout\_partial\article.ejs</code></p>
 <p>当时复制网上的代码，判断条件时没有红框这一句，就无法通过comments变量来控制评论区了。</p>
-<p>![2.png)</p>
+<p><img src="/2021/08/18/valine%E5%85%B3%E9%97%AD%E6%8C%87%E5%AE%9A%E9%A1%B5%E9%9D%A2%E8%AF%84%E8%AE%BA%E5%8C%BA/2.png" alt></p>
 <p>加上之后，成功解决！</p>
 
 	
