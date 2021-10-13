@@ -16,7 +16,7 @@
 <meta property="og:description" content="用οnclick&#x3D;&quot;window.open()&quot;，就能实现点一次超链接，就打开一个新窗口。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-10-13T11:07:00.000Z">
-<meta property="article:modified_time" content="2021-10-13T11:18:25.068Z">
+<meta property="article:modified_time" content="2021-10-13T11:21:40.821Z">
 <meta property="article:author" content="Wenretium">
 <meta property="article:tag" content="网站搭建">
 <meta name="twitter:card" content="summary">
@@ -185,7 +185,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">382字</span>
+        <span class="post-count">385字</span>
       </span>
     </span>
 
@@ -218,7 +218,7 @@
 <span id="more"></span>
 <p>先放解决方案：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;h4&gt;_blank只能打开一个新页面&lt;/h4&gt;</span><br><span class="line">&lt;a href=&quot;imgs/1.png&quot; target=“_blank”&gt;1&lt;/a&gt;</span><br><span class="line">&lt;a href=&quot;imgs/2.png&quot; target=“_blank”&gt;2&lt;/a&gt;</span><br><span class="line">&lt;br&gt;&lt;br&gt;</span><br><span class="line">&lt;h4&gt;用οnclick=&quot;window.open()&quot;，能打开任意多个新页面&lt;/h4&gt;</span><br><span class="line">&lt;a href=&quot;imgs/1.png&quot; οnclick=&quot;window.open(&#x27;imgs/2.png&#x27;);&quot; target=&quot;_blank&quot;&gt;11&lt;/a&gt;</span><br><span class="line">&lt;a href=&quot;imgs/2.png&quot; οnclick=&quot;window.open(&#x27;imgs/3.png&#x27;);&quot; target=&quot;_blank&quot;&gt;22&lt;/a&gt;</span><br></pre></td></tr></table></figure>
-<p>现在有网站主页index.html，上面有两个资源，用<a>标签进行超链接。点击跳转时，默认在浏览器原index窗口打开资源。但是，我想要浏览器打开新窗口进行跳转，保留原来的窗口。根据网络资料，在标签内写入<code>target=&quot;_blank&quot;</code>，成功打开了新窗口。</a></p>
+<p>现在有网站主页index.html，上面有两个资源，用&lt;a&gt;标签进行超链接。点击跳转时，默认在浏览器原index窗口打开资源。但是，我想要浏览器打开新窗口进行跳转，保留原来的窗口。根据网络资料，在标签内写入<code>target=&quot;_blank&quot;</code>，成功打开了新窗口。</p>
 <p>但是，这并没有完全满足我的需求！跳转资源1确实打开了新页面，但从主页访问资源2，资源2却在刚刚资源1的新窗口打开了。也就是说，最多只能有两个窗口。</p>
 <p>查询网络资料，竟然很少有人提到这个问题，大多数都是说写入<code>target=&quot;_blank&quot;</code>即可。终于被我找到了答案，就是用<code>οnclick=&quot;window.open()&quot;</code>，就能实现点一次超链接，就打开一个新窗口。</p>
 
