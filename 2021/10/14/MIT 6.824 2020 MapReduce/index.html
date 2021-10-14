@@ -6,22 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://Wenretium.github.io">
-  <title>2021.6.1 组会记录 | Wenretium&#39;s Space</title>
+  <title>MIT 6.824 2020 MapReduce | Wenretium&#39;s Space</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录组会内容。">
+  <meta name="description" content="MapReduce 实验记录。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2021.6.1 组会记录">
-<meta property="og:url" content="https://wenretium.github.io/2021/06/01/2021.6.1%20%E7%BB%84%E4%BC%9A%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:title" content="MIT 6.824 2020 MapReduce">
+<meta property="og:url" content="https://wenretium.github.io/2021/10/14/MIT%206.824%202020%20MapReduce/index.html">
 <meta property="og:site_name" content="Wenretium&#39;s Space">
-<meta property="og:description" content="记录组会内容。">
+<meta property="og:description" content="MapReduce 实验记录。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://wenretium.github.io/image-20210601185605382.png">
-<meta property="og:image" content="https://wenretium.github.io/image-20210601184956510.png">
-<meta property="article:published_time" content="2021-06-01T13:03:00.000Z">
-<meta property="article:modified_time" content="2021-08-18T05:07:25.228Z">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-bfc47dacc00ff7a4138d4bef9064d546.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-48425ccc7852c4c16fb31f8f352f059e.png">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-393b917287a5e55d3c08fd1ee1df625e.png">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-54b89f5bc41d05829297b2d22143430e.png">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-bc15c31735e236076cb1499a59fc5c48.png">
+<meta property="article:published_time" content="2021-10-14T15:02:00.000Z">
+<meta property="article:modified_time" content="2021-10-14T15:03:11.477Z">
 <meta property="article:author" content="Wenretium">
+<meta property="article:tag" content="分布式系统">
+<meta property="article:tag" content="专业课">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://wenretium.github.io/image-20210601185605382.png">
+<meta name="twitter:image" content="https://pic4.zhimg.com/80/v2-bfc47dacc00ff7a4138d4bef9064d546.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Wenretium&#39;s Space" type="application/atom+xml">
   
@@ -163,20 +168,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-2021.6.1 组会记录" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-MIT 6.824 2020 MapReduce" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      2021.6.1 组会记录
+      MIT 6.824 2020 MapReduce
     </h1>
   
 
         
-        <a href="/2021/06/01/2021.6.1%20%E7%BB%84%E4%BC%9A%E8%AE%B0%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2021-06-01T13:03:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-01</time>
+        <a href="/2021/10/14/MIT%206.824%202020%20MapReduce/" class="archive-article-date">
+  	<time datetime="2021-10-14T15:02:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-14</time>
 </a>
      
 
@@ -187,7 +192,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">622字</span>
+        <span class="post-count">2.5k字</span>
       </span>
     </span>
 
@@ -196,7 +201,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">2分</span>
+        <span class="post-count">10分</span>
       </span>
     </span>
 </div>
@@ -216,86 +221,84 @@
 
 
 	
-		<p>记录组会内容。</p>
+		<p>MapReduce 实验记录。</p>
 <span id="more"></span>
-
-<h3 id="工作：ZeroDCE-DSFD"><a href="#工作：ZeroDCE-DSFD" class="headerlink" title="工作：ZeroDCE+DSFD"></a>工作：ZeroDCE+DSFD</h3><p>遇到困难，未完成。用网络上的train.py接入HLA中DSFD，很多地方不匹配。</p>
-<h3 id="上周论文Zero-Shot-Restoration-of-Underexposed-Images-via-Robust-Retinex-Decomposition的两个疑点"><a href="#上周论文Zero-Shot-Restoration-of-Underexposed-Images-via-Robust-Retinex-Decomposition的两个疑点" class="headerlink" title="上周论文Zero-Shot Restoration of Underexposed Images via Robust Retinex Decomposition的两个疑点"></a>上周论文Zero-Shot Restoration of Underexposed Images via Robust Retinex Decomposition的两个疑点</h3><p>并没有找到作者的联系方式。在github项目中提问，未有答复。</p>
-<h3 id="继续轻量化实验"><a href="#继续轻量化实验" class="headerlink" title="继续轻量化实验"></a>继续轻量化实验</h3><p>（上次组会前工作内容）</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>EnlightenGAN</th>
-<th>EnlightenGAN_light</th>
-<th>EnlightenGAN_light(only g)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>模型参数量</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Generator</td>
-<td>8.63M</td>
-<td>2.39M</td>
-<td>2.39M</td>
-</tr>
-<tr>
-<td>Discriminator_A</td>
-<td>11.15M</td>
-<td>0.73M</td>
-<td>11.15M</td>
-</tr>
-<tr>
-<td>Discriminator_B</td>
-<td>6.96M</td>
-<td>0.46M</td>
-<td>6.96M</td>
-</tr>
-<tr>
-<td>PSNR</td>
-<td>17.01</td>
-<td>/</td>
-<td>16.64</td>
-</tr>
-<tr>
-<td>SSIM</td>
-<td>0.63</td>
-<td>/</td>
-<td>0.60</td>
-</tr>
-</tbody></table>
-<p>5.14 进度：</p>
-<p>EnlightenGAN_light无法收敛，梯度迅速消失。</p>
-<h3 id="在弱光增强的创新点"><a href="#在弱光增强的创新点" class="headerlink" title="在弱光增强的创新点"></a>在弱光增强的创新点</h3><p>个人对风格迁移感兴趣，金老师提议用风格迁移做弱光增强。</p>
-<p>之前金老师在组会上的建议：高质量图像，通过网络，学成低质量图像，保证其与真实低质量图像有相似之处。再用合成的低质量图像来训练增强网络（从超分上得到的启发）。</p>
-<p>可否利用CycleGAN？</p>
-<p>（LOL数据集：）</p>
-<p><img src="/image-20210601185605382.png" alt="image-20210601185605382"></p>
-<p><img src="/image-20210601184956510.png" alt="image-20210601184956510"></p>
-<h3 id="复现项目"><a href="#复现项目" class="headerlink" title="复现项目"></a>复现项目</h3><p>可作为小组任务完成。</p>
-<h3 id="今天的启发"><a href="#今天的启发" class="headerlink" title="今天的启发"></a>今天的启发</h3><ol>
-<li><p>工作还要继续做，少摸鱼，多学习。</p>
+<h2 id="1-任务介绍">1. 任务介绍</h2>
+<p>MapReduce 是一个基础而实用的分布式框架，它的核心思想是创建一个掌控全局的 master 和若干个打工仔 worker，master 通过网络通信调动 worker，实现高效的多线程并行化工作。</p>
+<p>在本次 MIT 6.824 2020 Lab1 项目中，使用 go 语言搭建了一个基础分布式框架，用 rpc 进行通信，实现词频统计功能。</p>
+<p>📚 附：<a target="_blank" rel="noopener" href="http://nil.csail.mit.edu/6.824/2020/labs/lab-mr.html">MIT 6.824 Lab 1: MapReduce</a>，<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/337310144">知乎推荐参考资料</a>（非常感谢思路！）</p>
+<h2 id="2-整体框架">2. 整体框架</h2>
+<p>因为网络上关于 MapReduce 的参考资料很多，细节部分不多赘述，下面是我自己总结的两张流程图，作为补充。</p>
+<h3 id="2-1-整体结构图">2.1 整体结构图</h3>
+<div align="center"><img src="https://pic4.zhimg.com/80/v2-bfc47dacc00ff7a4138d4bef9064d546.jpg" alt="mapreduce-structure.drawio" style="zoom:80%;"></div>
+<h3 id="2-2-数据流图">2.2 数据流图</h3>
+<div align="center"><img src="https://pic4.zhimg.com/80/v2-48425ccc7852c4c16fb31f8f352f059e.png" alt="mapreduce-procedure.drawio" style="zoom:80%;"></div>
+<h2 id="3-重难点记录">3. 重难点记录</h2>
+<h3 id="3-1-容错处理">3.1 容错处理</h3>
+<h4 id="3-1-1-定时追踪">3.1.1 定时追踪</h4>
+<p>goroutine 是 Go 语言中的轻量级线程实现，由 Go 运行时（runtime）管理。Go 程序会智能地将 goroutine 中的任务合理地分配给每个 CPU。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">go</span> 函数名( 参数列表 )</span><br></pre></td></tr></table></figure>
+<p>使用 go 关键字创建 goroutine 时，被调用函数的返回值会被忽略。如果需要在 goroutine 中返回数据，要使用通道（channel）特性，通过通道把数据从 goroutine 中作为返回值传出。</p>
+<p>在项目中，用 goroutine 将 <code>checkCrash</code> 函数挂起，每隔一段时间（10s）就检查一次：如果任务还是 RUNNING 状态，考虑到任务工作量较小，说明负责该任务的 worker 遇到了点麻烦，不适合继续干这个任务了。于是，我们用小本本（CrashWorkers）将这个没完成 ddl 的 worker 记下，将任务重置为 UNDONE 状态，重新分配给来申请任务的其他 worker。</p>
+<p>worker 可能遇到两种情况，导致任务在时限后仍为 RUNNING：</p>
+<ol>
+<li>
+<p>worker 在工作的时候突然退出了，没有向 master 发送完成任务的消息（已经杳无音讯了），任务就一直卡在 RUNNING 的状态。</p>
 </li>
-<li><p>可以继续尝试联系论文作者，在学校官网上查找联系方式。</p>
-</li>
-<li><p>分析原因，可能是判别器对EnlightenGAN很重要，牵一发而动全身。</p>
-</li>
-<li><p>这个idea实验室的师兄有在做。金老师说，实际上cycleGAN将亮图转为暗图后，有很多隐藏信息在黑图中，这样的伪黑图往往容易转为高质量亮图。这与真实黑图是不符合的。为了解决这个问题，师兄提出了不对称cycleGAN。</p>
-<p>疑问：有监督训练cycleGAN，也没办法生成好的伪黑图吗？</p>
-<p>沿着这个思路，还有什么办法能生成逼近真实黑图的伪黑图呢？</p>
-<p>能不能做一个网络，从成对真实黑图、伪黑图中学习特征？</p>
-</li>
-<li><p>经周问了一个问题，我觉得问得很有道理：大部分方法都是图像-&gt;增强网络-&gt;图像-&gt;检测网络-&gt;图像。为什么不直接图像-&gt;增强网络-&gt;检测网络-&gt;图像，直接在feature map进行增强呢？</p>
-<p>这个想法很少人做，缺乏理论依据。也许别的领域有。</p>
-<p>金老师说，可以不着急，慢慢积累。的确，继续读论文，总会有灵感，来日方长。</p>
-</li>
-<li><p>大家都又强又努力。</p>
+<li>
+<p>worker 在工作时遇到了点障碍，耽误了时间，在 10s 后才完成任务。这之前，master 已经把任务状态重置了，可能任务已经分配给了其他 worker。前一个 worker 向 master 发送完成请求（CheckTaskFinished），请求保存文件并将任务置为 FINISHED，这时 master 通过查阅的 CrashWorkers 名单，拒绝它的请求。因为我们假定这个 worker 虽然犯了一次错误，但还是个好孩子，所以 master 将其移除名单，允许其改过自新、继续请求任务。</p>
 </li>
 </ol>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// call for a task</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(m *Master)</span> <span class="title">CallTask</span><span class="params">(args *CallTaskArgs, reply *CallTaskReply)</span> <span class="title">error</span></span> &#123;</span><br><span class="line">	reply.ReceivedTask, reply.NTask, reply.TaskID = m.getTask()</span><br><span class="line">	<span class="comment">// check crash</span></span><br><span class="line">	<span class="comment">// wait for 10s at most, else set it from RUNNING to UNDONE</span></span><br><span class="line">	<span class="keyword">if</span> reply.ReceivedTask.TaskType == MAPTASK || reply.ReceivedTask.TaskType == REDUCETASK &#123;</span><br><span class="line">		<span class="keyword">go</span> m.checkCrash(reply.ReceivedTask)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// check a task is finished or not</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(m *Master)</span> <span class="title">CheckTaskFinished</span> <span class="params">(args *CheckTaskFinishedArgs, reply *CheckTaskFinishedReply)</span> <span class="title">error</span></span> &#123;</span><br><span class="line">	m.mutex.Lock( )</span><br><span class="line">	<span class="keyword">defer</span> m.mutex.Unlock( )</span><br><span class="line">	tmpFileNames := args.TmpFileNames</span><br><span class="line">	<span class="keyword">for</span> index, id := <span class="keyword">range</span> m.crashWorkers &#123;</span><br><span class="line">        <span class="keyword">if</span> id == args.WorkerID &#123;</span><br><span class="line">			<span class="comment">// worker had crashed before</span></span><br><span class="line">			<span class="comment">// give up the temp file</span></span><br><span class="line">			<span class="comment">// ......</span></span><br><span class="line">			<span class="comment">// remove crash workerID from list</span></span><br><span class="line">			<span class="comment">// ......</span></span><br><span class="line">			<span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="comment">// successfully commit a task</span></span><br><span class="line">    <span class="comment">// ......</span></span><br><span class="line">	<span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-1-2-临时文件">3.1.2 临时文件</h4>
+<p>考虑 worker 工作得慢被当作 crash 的情况。这个 worker 慢慢地进行计算，完成后想要写入结果，但是结果文件已经由新分配的快 worker 生成了。这时，若慢 worker 仍要写入，就可能对文件产生污染（在不创建新文件的情况下，Linux 是默认追加而不是重定向）。按照实验指南的提示，我们先创建临时文件，让 worker 将结果先写入临时文件中，待完成请求（CheckTaskFinished）通过后，将临时文件重命名为最终的名字；否则，直接删除临时文件。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// worker.go</span></span><br><span class="line"><span class="comment">// write to temp file</span></span><br><span class="line">tmpFileName := fmt.Sprintf(<span class="string">&quot;mr-%d-%d-&quot;</span>, mapTaskID, reducerID)</span><br><span class="line">tmpFile, err := ioutil.TempFile(<span class="string">&quot;&quot;</span>, tmpFileName)</span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">	log.Fatal(<span class="string">&quot;error: create temp output file failed.&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// ......</span></span><br><span class="line">tmpFile.Close()</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// master.go</span></span><br><span class="line"><span class="comment">// rename tempfile to finalfile</span></span><br><span class="line"><span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(tmpFileNames); i++ &#123;</span><br><span class="line">    err := os.Rename(tmpFileNames[i], finalFileNames[i])</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">    	log.Fatal(<span class="string">&quot;error: can&#x27;t rename tempfile to finalfile.&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-2-互斥锁">3.2 互斥锁</h3>
+<p>整个框架有很多共享变量，如每个任务的 <code>TaskState</code>，这个变量非常重要，由于它会受到多个线程 worker 的改变，我们采用互斥锁将涉及它的函数锁起来。</p>
+<p>Mutex 是互斥锁的意思，也叫排他锁，同一时刻一段代码只能被一个线程运行，使用时只需要关注方法 Lock（加锁）和 Unlock（解锁）即可。<br>
+在 Lock() 和 Unlock() 之间的代码段称为资源的临界区(critical section)，是线程安全的，任何一个时间点都只能有一个 goroutine 执行这段区间的代码。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在函数体内加入此段代码，defer 保证函数结束后自动释放锁</span></span><br><span class="line">sync.Mutex mutex</span><br><span class="line">m.mutex.Lock( )</span><br><span class="line"><span class="keyword">defer</span> m.mutex.Unlock( )</span><br></pre></td></tr></table></figure>
+<h2 id="4-Debug-之路">4. Debug 之路</h2>
+<h3 id="4-1-RPC-通信异常">4.1 RPC 通信异常</h3>
+<p>最开始遇到的问题，代码里有特别强调: <strong>RPC通信模块中所有函数和变量名，首字母要大写</strong>。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// RPC definitions.</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// remember to capitalize all names.</span></span><br><span class="line"><span class="comment">//</span></span><br></pre></td></tr></table></figure>
+<h3 id="4-2-程序运行速度慢，任务接收不正常">4.2 程序运行速度慢，任务接收不正常</h3>
+<p>整个程序运行速度很慢。并且，将 worker 接收任务的过程打印出来，发现：worker 接收 map 任务和 reduce 任务的总次数，都大于实际所需次数。也就是说，任务被重复接收了。开始时，我考虑以下几种错误可能：</p>
+<ul>
+<li>变量共享导致异常</li>
+<li>任务分配过程有纰漏</li>
+</ul>
+<p>排除了以上原因，我对程序进行打印调试，发现：</p>
+<div align="center"><img src="https://pic4.zhimg.com/80/v2-393b917287a5e55d3c08fd1ee1df625e.png" alt="image-20210930231738219" style="zoom:80%;"></div>
+<p>state 0 为未完成，state 2 为已完成。worker 1 接收了状态为 UNDONE 的任务 1 （事实上，传到 worker 时任务应为 RUNNING状态），worker 1成功完成了任务 1，但任务 1 并没有被成功设为 FINISHED 状态，后面另一个 worker 2 重复接收了任务 1 ，但此时任务 1 却是 FINISHED 状态的。我们的任务分配代码确实会将任务设为 RUNNING 再传出去，确实会将已完成的任务设为 FINISHED，也确实不会将 FINISHED 的任务重新分配出去。于是，这个现象令我感到非常疑惑。</p>
+<p><strong>最终发现：我在参考别人思路设计 crash 部分代码时，没有了解 goroutine 的使用，错将 go 并行调用函数当成直接调用函数来写。同时，我还在 checkCrash 函数中，将互斥锁加在了 Sleep 函数的前面。</strong></p>
+<p>错将 goroutine 写成普通单线程，master 的线程会被占住，不能继续进行调度工作，程序运行就会慢。</p>
+<p>先申请互斥锁，再调用 Sleep 函数，在单线程中就会一直占住，变量<code>TaskState</code>也会被占住不能更新。worker 完成了任务向 master 汇报完成，但数据被锁住了，就没有及时更新为 RUNNING。</p>
+<p>将互质锁位置更改后，输出如下：</p>
+<div align="center"><img src="https://pic4.zhimg.com/80/v2-54b89f5bc41d05829297b2d22143430e.png" alt="image-20210930225729314" style="zoom:80%;"></div>
+<p>这时，任务永远卡在了 RUNNING 状态！</p>
+<p>继续将 <code>go m.checkCrash(reply.ReceivedTask, workerID)</code> 更改后，程序<strong>正常运行</strong>。（这部分想努力捋清楚原因，碍于时间，先挖个坑。）</p>
+<p>修改后代码如下：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// worker ask for a task, send a specific task</span></span><br><span class="line"><span class="comment">// consider crash condition</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(m *Master)</span> <span class="title">CallTask</span><span class="params">(args *CallTaskArgs, reply *CallTaskReply)</span> <span class="title">error</span></span> &#123;</span><br><span class="line">	reply.ReceivedTask, reply.NTask, reply.TaskID = m.getTask()</span><br><span class="line">	<span class="comment">// check crash</span></span><br><span class="line">	<span class="comment">// wait for 10s at most, else set it from RUNNING to UNDONE</span></span><br><span class="line">	workerID := args.WorkerID</span><br><span class="line">	<span class="keyword">if</span> reply.ReceivedTask.TaskType == MAPTASK || reply.ReceivedTask.TaskType == REDUCETASK &#123;</span><br><span class="line">		<span class="keyword">go</span> m.checkCrash(reply.ReceivedTask, workerID)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// check crash or not</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(m *Master)</span> <span class="title">checkCrash</span> <span class="params">(thisTask *Task, workerID <span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">	<span class="comment">// wait for 10s</span></span><br><span class="line">	time.Sleep(<span class="number">10</span>*time.Second)</span><br><span class="line">	m.mutex.Lock( )</span><br><span class="line">	<span class="keyword">defer</span> m.mutex.Unlock( )</span><br><span class="line">	<span class="comment">// check this task is fininshed or not</span></span><br><span class="line">	<span class="comment">// ......</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-3-临时文件没有全部删除">4.3 临时文件没有全部删除</h3>
+<p>用 ioutil.TempFile 函数在系统的<code>/tmp</code>路径建立临时文件，后面 os.Rename 函数就会将其删除。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tmpFile, err := ioutil.TempFile(<span class="string">&quot;&quot;</span>, tmpFileName)</span><br></pre></td></tr></table></figure>
+<p>实际上，在 crash-test 中，我的临时文件并没有删除干净。因为我在 reduce 任务中，是先打开文件，一边运行 reducef 函数，一边写入文件。</p>
+<p>查看 crash.go，研究其 crash 机制：有 1/3 的几率是直接退出，有 1/3 的几率是停顿 [0, 10] s。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">// crash.go</span><br><span class="line">func maybeCrash() &#123;</span><br><span class="line">	max := big.NewInt(1000)</span><br><span class="line">	rr, _ := crand.Int(crand.Reader, max)</span><br><span class="line">	if rr.Int64() &lt; 330 &#123;</span><br><span class="line">		// crash!</span><br><span class="line">		os.Exit(1)</span><br><span class="line">	&#125; else if rr.Int64() &lt; 660 &#123;</span><br><span class="line">		// delay for a while.</span><br><span class="line">		maxms := big.NewInt(10 * 1000)</span><br><span class="line">		ms, _ := crand.Int(crand.Reader, maxms)</span><br><span class="line">		time.Sleep(time.Duration(ms.Int64()) * time.Millisecond)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func Map(filename string, contents string) []mr.KeyValue &#123;</span><br><span class="line">	maybeCrash()</span><br><span class="line">	// do map</span><br><span class="line">	return kva</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func Reduce(key string, values []string) string &#123;</span><br><span class="line">	maybeCrash()</span><br><span class="line">	// do reduce</span><br><span class="line">	return val</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>reduce 任务中要执行包含的 key 数量这么多次 reducef 函数，crash 直接退出后，这个线程完全失联，不返回临时文件名，自然没办法删除。因此，这里采用一个策略，先把 reducef 后的结果保存好，再创建临时文件写入，这样即使前面 crash 了，也不会留下可怜无人管的临时文件。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// use a temp array to save reducef results</span></span><br><span class="line"><span class="comment">// in case that reducef carsh, and left a created temp file. Master don&#x27;t know the temp filename and can&#x27;t delete it.</span></span><br><span class="line">interResult := []<span class="keyword">string</span>&#123;&#125;</span><br><span class="line"><span class="keyword">for</span> k,v := <span class="keyword">range</span> interMaps &#123;</span><br><span class="line">	interResult = <span class="built_in">append</span>(interResult, fmt.Sprintf(<span class="string">&quot;%v %v\n&quot;</span>, k, w.reducef(k, v)))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-4-connection-refused">4.4 connection refused</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2021/09/30 10:28:50 dialing:dial unix /var/tmp/824-mr-1000: connect: connection refused</span><br></pre></td></tr></table></figure>
+<p>这个报错是 worker 调用 call 函数向 master 通信失败产生的，通常原因是 master 已退出而 worker 还没退出。在我原本的代码中，master 向完成最后一个任务的 worker 发送了退出指令，短时间内 Done 函数返回 true 值，master 就直接溜之大吉了。这导致其他来请求任务的 worker 没有收到返回指令，产生报错。</p>
+<p>虽然不影响最终结果，但是考虑到通信接口可能会受到干扰，我在 Done 函数中增加了等待时间，等待其他 worker 前来，一个个告诉它们：”活干完啦，快下班吧“。</p>
+<p>这里设置为等待一秒是因为我的 WAITTASK 设置为 1s，刚好能覆盖住所有 worker。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// main/mrmaster.go calls Done() periodically to find out</span><br><span class="line">// if the entire job has finished.</span><br><span class="line">func (m *Master) Done() bool &#123;</span><br><span class="line">	ret := false</span><br><span class="line">	if m.taskPhase == EXITPHASE &#123;</span><br><span class="line">		ret = true</span><br><span class="line">		time.Sleep(1*time.Second)</span><br><span class="line"> 		//fmt.Println(&quot;The program is finished, exiting... :)&quot;)</span><br><span class="line">		os.Exit(0)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	return ret</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="5-PASSED-ALL-TESTS">5. PASSED ALL TESTS</h2>
+<div align="center"><img src="https://pic4.zhimg.com/80/v2-bc15c31735e236076cb1499a59fc5c48.png" alt="image-20211001015121057" style="zoom: 80%;"></div>
 
 	
 
@@ -305,13 +308,28 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">分布式系统</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">专业课</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/组会记录//" class="article-tag-list-link color5">组会记录</a>
+        			<a href="/categories/分布式系统//" class="article-tag-list-link color1">分布式系统</a>
         		</li>
       		
 		</ul>
@@ -366,7 +384,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://wenretium.github.io/2021/06/01/2021.6.1%20%E7%BB%84%E4%BC%9A%E8%AE%B0%E5%BD%95/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://wenretium.github.io/2021/10/14/MIT%206.824%202020%20MapReduce/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -380,18 +398,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/06/04/win%E7%B3%BB%E7%BB%9F%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E6%9C%80%E5%A4%9A%E8%83%BD%E6%94%BE%E5%A4%9A%E5%B0%91%E4%B8%AA%E5%AD%90%E6%96%87%E4%BB%B6/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          win系统一个文件夹下最多能放多少个子文件
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/05/31/%E7%94%A8GAN%E7%94%9F%E6%88%90MNIST%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">用GAN生成MNIST手写数字</div>
+    <a href="/2021/10/13/HTML%E4%B8%ADa%E6%A0%87%E7%AD%BE%E6%89%93%E5%BC%80%E4%BB%BB%E6%84%8F%E5%A4%9A%E4%B8%AA%E6%96%B0%E7%AA%97%E5%8F%A3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HTML中&lt;a&gt;标签打开任意多个新窗口</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -418,7 +427,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%EF%BC%9AZeroDCE-DSFD"><span class="toc-number">1.</span> <span class="toc-text">工作：ZeroDCE+DSFD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8A%E5%91%A8%E8%AE%BA%E6%96%87Zero-Shot-Restoration-of-Underexposed-Images-via-Robust-Retinex-Decomposition%E7%9A%84%E4%B8%A4%E4%B8%AA%E7%96%91%E7%82%B9"><span class="toc-number">2.</span> <span class="toc-text">上周论文Zero-Shot Restoration of Underexposed Images via Robust Retinex Decomposition的两个疑点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%A7%E7%BB%AD%E8%BD%BB%E9%87%8F%E5%8C%96%E5%AE%9E%E9%AA%8C"><span class="toc-number">3.</span> <span class="toc-text">继续轻量化实验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E5%BC%B1%E5%85%89%E5%A2%9E%E5%BC%BA%E7%9A%84%E5%88%9B%E6%96%B0%E7%82%B9"><span class="toc-number">4.</span> <span class="toc-text">在弱光增强的创新点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8D%E7%8E%B0%E9%A1%B9%E7%9B%AE"><span class="toc-number">5.</span> <span class="toc-text">复现项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8A%E5%A4%A9%E7%9A%84%E5%90%AF%E5%8F%91"><span class="toc-number">6.</span> <span class="toc-text">今天的启发</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BB%BB%E5%8A%A1%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">1. 任务介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%95%B4%E4%BD%93%E6%A1%86%E6%9E%B6"><span class="toc-number">2.</span> <span class="toc-text">2. 整体框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E6%95%B4%E4%BD%93%E7%BB%93%E6%9E%84%E5%9B%BE"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 整体结构图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E6%95%B0%E6%8D%AE%E6%B5%81%E5%9B%BE"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 数据流图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E9%87%8D%E9%9A%BE%E7%82%B9%E8%AE%B0%E5%BD%95"><span class="toc-number">3.</span> <span class="toc-text">3. 重难点记录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E5%AE%B9%E9%94%99%E5%A4%84%E7%90%86"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 容错处理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-1-%E5%AE%9A%E6%97%B6%E8%BF%BD%E8%B8%AA"><span class="toc-number">3.1.1.</span> <span class="toc-text">3.1.1 定时追踪</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-2-%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6"><span class="toc-number">3.1.2.</span> <span class="toc-text">3.1.2 临时文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E4%BA%92%E6%96%A5%E9%94%81"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 互斥锁</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Debug-%E4%B9%8B%E8%B7%AF"><span class="toc-number">4.</span> <span class="toc-text">4. Debug 之路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-RPC-%E9%80%9A%E4%BF%A1%E5%BC%82%E5%B8%B8"><span class="toc-number">4.1.</span> <span class="toc-text">4.1 RPC 通信异常</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E9%80%9F%E5%BA%A6%E6%85%A2%EF%BC%8C%E4%BB%BB%E5%8A%A1%E6%8E%A5%E6%94%B6%E4%B8%8D%E6%AD%A3%E5%B8%B8"><span class="toc-number">4.2.</span> <span class="toc-text">4.2 程序运行速度慢，任务接收不正常</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6%E6%B2%A1%E6%9C%89%E5%85%A8%E9%83%A8%E5%88%A0%E9%99%A4"><span class="toc-number">4.3.</span> <span class="toc-text">4.3 临时文件没有全部删除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-connection-refused"><span class="toc-number">4.4.</span> <span class="toc-text">4.4 connection refused</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-PASSED-ALL-TESTS"><span class="toc-number">5.</span> <span class="toc-text">5. PASSED ALL TESTS</span></a></li></ol>
                     </div>
                 </span>
             </div>
