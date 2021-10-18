@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://Wenretium.github.io">
   <title>OSError broken data stream when reading image file | Wenretium&#39;s Space</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="PIL.Image包中使用Image.open(path)报错。">
+  <meta name="description" content="PIL.Image 包中使用 Image.open(path) 报错。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OSError broken data stream when reading image file">
 <meta property="og:url" content="https://wenretium.github.io/2021/10/18/OSError%20broken%20data%20stream%20when%20reading%20image%20file/index.html">
 <meta property="og:site_name" content="Wenretium&#39;s Space">
-<meta property="og:description" content="PIL.Image包中使用Image.open(path)报错。">
+<meta property="og:description" content="PIL.Image 包中使用 Image.open(path) 报错。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-10-18T15:42:32.000Z">
-<meta property="article:modified_time" content="2021-10-18T16:00:14.698Z">
+<meta property="article:modified_time" content="2021-10-18T16:02:21.502Z">
 <meta property="article:author" content="Wenretium">
-<meta property="article:tag" content="防坑指南">
+<meta property="article:tag" content="踩坑">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Wenretium&#39;s Space" type="application/atom+xml">
@@ -191,7 +191,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">306字</span>
+        <span class="post-count">307字</span>
       </span>
     </span>
 
@@ -220,12 +220,12 @@
 
 
 	
-		<p>PIL.Image包中使用Image.open(path)报错。</p>
+		<p>PIL.Image 包中使用 Image.open(path) 报错。</p>
 <span id="more"></span>
-<p>报错如下，定位到Image.open(path)函数中，在依次读入数据集的时候突然报错中止。</p>
+<p>报错如下，定位到 Image.open(path) 函数中，在依次读入数据集的时候突然报错中止。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IOError: broken data stream when reading image file</span><br></pre></td></tr></table></figure>
 <h4 id="解决方法">解决方法</h4>
-<p>在py文件开头加上这两句代码，允许Image打开受损的图像：</p>
+<p>在 py 文件开头加上这两句代码，允许 Image 打开受损的图像：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image, ImageFile</span><br><span class="line">ImageFile.LOAD_TRUNCATED_IMAGES = <span class="literal">True</span></span><br></pre></td></tr></table></figure>
 <p>成果解决，不再报错。</p>
 <h4 id="分析">分析</h4>
@@ -234,7 +234,7 @@
 <li>import tf 和 import PIL 的顺序有问题</li>
 <li>图片本身受损</li>
 </ol>
-<p>我的框架是pytorch，因此先搁置第一种可能。</p>
+<p>我的框架是 pytorch，因此先搁置第一种可能。</p>
 <p>数据集在另一台服务器时没出问题。我将导致程序中止的那张图像删去，重跑程序，发现它又在下一张图像报错退出了。说明应该不是图像受损，而是其他奇怪的原因。</p>
 <p>网络上提供这个方法的帖子还是挺多的，但是我一开始并没有去试，因为我的代码中没有调用到 ImageFile 这个库，我以为不是这个原因。加上后，报错消失，所以可能是 Image 默认调用了 ImageFile。</p>
 
@@ -251,7 +251,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">防坑指南</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">踩坑</a>
         		</li>
       		
 		</ul>
@@ -565,7 +565,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">防坑指南</a>
+                <a href="javascript:void(0)" class="js-tag color3">组会</a>
               </li>
             
             <div class="clearfix"></div>
