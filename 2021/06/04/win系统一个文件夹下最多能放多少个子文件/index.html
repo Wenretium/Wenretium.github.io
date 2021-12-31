@@ -190,7 +190,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">704字</span>
+        <span class="post-count">705字</span>
       </span>
     </span>
 
@@ -222,14 +222,25 @@
 		<p>刚刚洗澡的时候突发奇想：win系统一个文件夹下最多能放多少个子文件？如果超出了，会发生什么？</p>
 <p>故开此专栏——突发奇想，认真求解。</p>
 <span id="more"></span>
-
-<h3 id="突发奇想"><a href="#突发奇想" class="headerlink" title="突发奇想"></a>突发奇想</h3><p>win系统一个文件夹下最多能放多少个子文件？如果超出了，会发生什么？</p>
-<h3 id="认真求解"><a href="#认真求解" class="headerlink" title="认真求解"></a>认真求解</h3><p>随手查阅网络，发现不少人都思考过这个问题。此处引用一篇详细的解答。</p>
-<p><strong>硬盘格式为：FAT格式（如：上世纪的Windows95及之前版本等）</strong><br>单个文件存储容量最大为：4GB<br>单文件夹中所有文件总和的容量最大为：4GB<br>单文件夹中最大可有<strong>512</strong>个文件（注：前提是所有文件容量总和小于或等于4GB时，并且此格式似乎应该是不支持长文件名，只支持短文件名！）</p>
-<p><strong>硬盘格式为：FAT32格式（如：上世纪的Windows98或本世纪的Windows2000、Windows XP、Windows2003、Windows Vista等都可存在此格式的硬盘）</strong><br>单个文件存储容量最大为：4GB<br>单文件夹中所有文件总和的容量最大为：2TB（注：1TB=1024GB）<br>单文件夹中最大可有<strong>65,534</strong>个文件（注：前提是所有文件容量总和小于或等于2TB，并且所有文件名都是短文件名，而不是长文件名。至于什么是长文件名什么是短文件名，到网上搜素看吧！）</p>
-<p><strong>硬盘格式为：NTFS格式（如：本世纪的Windows2000、Windows XP、Windows2003、Windows Vista等都可存在此格式的硬盘）</strong><br>单个文件存储容量最大为：无限制<br>单文件夹中所有文件总和的容量最大为：256TB (64KB集群)（注：不太明白为何要加64KB集群，是不是再说磁盘阵列呢？1TB=1024GB，算算256TB是多大的GB，现在个人计算机或者一般PC服务器似乎还没有这么大的硬盘）<br>单文件夹中最大可有<strong>4,294,967,295</strong>个文件（注：前提是所有文件容量总和小于或等于256TB时，并且所有文件名都是短文件名，而不是长文件名。至于什么是长文件名什么是短文件名，到网上搜素看吧！我想这个应该在普遍情况下都能满足此前提的。）</p>
+<h3 id="突发奇想">突发奇想</h3>
+<p>win系统一个文件夹下最多能放多少个子文件？如果超出了，会发生什么？</p>
+<h3 id="认真求解">认真求解</h3>
+<p>随手查阅网络，发现不少人都思考过这个问题。此处引用一篇详细的解答。</p>
+<p><strong>硬盘格式为：FAT格式（如：上世纪的Windows95及之前版本等）</strong><br>
+单个文件存储容量最大为：4GB<br>
+单文件夹中所有文件总和的容量最大为：4GB<br>
+单文件夹中最大可有<strong>512</strong>个文件（注：前提是所有文件容量总和小于或等于4GB时，并且此格式似乎应该是不支持长文件名，只支持短文件名！）</p>
+<p><strong>硬盘格式为：FAT32格式（如：上世纪的Windows98或本世纪的Windows2000、Windows XP、Windows2003、Windows Vista等都可存在此格式的硬盘）</strong><br>
+单个文件存储容量最大为：4GB<br>
+单文件夹中所有文件总和的容量最大为：2TB（注：1TB=1024GB）<br>
+单文件夹中最大可有<strong>65,534</strong>个文件（注：前提是所有文件容量总和小于或等于2TB，并且所有文件名都是短文件名，而不是长文件名。至于什么是长文件名什么是短文件名，到网上搜素看吧！）</p>
+<p><strong>硬盘格式为：NTFS格式（如：本世纪的Windows2000、Windows XP、Windows2003、Windows Vista等都可存在此格式的硬盘）</strong><br>
+单个文件存储容量最大为：无限制<br>
+单文件夹中所有文件总和的容量最大为：256TB (64KB集群)（注：不太明白为何要加64KB集群，是不是再说磁盘阵列呢？1TB=1024GB，算算256TB是多大的GB，现在个人计算机或者一般PC服务器似乎还没有这么大的硬盘）<br>
+单文件夹中最大可有<strong>4,294,967,295</strong>个文件（注：前提是所有文件容量总和小于或等于256TB时，并且所有文件名都是短文件名，而不是长文件名。至于什么是长文件名什么是短文件名，到网上搜素看吧！我想这个应该在普遍情况下都能满足此前提的。）</p>
 <p>实验部分，也已经有人做过了：在FAT32文件格式的硬盘中批次创建文件，建立到第65535个文件时，出现“无法创建目录或文件”的提示。如果是现代常见的NTFS格式，至少需要有16.7TB的空余磁盘才能完成这个测试。显然，日常使用是不会导致错误的。</p>
-<h3 id="引用资料"><a href="#引用资料" class="headerlink" title="引用资料"></a>引用资料</h3><ol>
+<h3 id="引用资料">引用资料</h3>
+<ol>
 <li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/yymn/p/4494479.html">https://www.cnblogs.com/yymn/p/4494479.html</a></li>
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/greystar/article/details/9036029">https://blog.csdn.net/greystar/article/details/9036029</a></li>
 </ol>
@@ -527,15 +538,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">组会</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">论文分享</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">博客搭建</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">踩坑</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -543,11 +550,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">网络通信</a>
+                <a href="javascript:void(0)" class="js-tag color3">踩坑</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">深度学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">网络通信</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -559,15 +570,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">组会</a>
+                <a href="javascript:void(0)" class="js-tag color2">Word排版</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">博客搭建</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">MARK</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Word排版</a>
               </li>
             
             <div class="clearfix"></div>
