@@ -6,19 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://Wenretium.github.io">
-  <title>配环境时那些奇怪的报错 | Wenretium&#39;s Space</title>
+  <title>A Survey of DDAOD | Wenretium&#39;s Space</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录一下。">
+  <meta name="description" content="[Paper] DEEP DOMAIN ADAPTIVE OBJECT DETECTION 深度领域自适应目标检测(Deep domain adaptive object detection, DDAOD)是利用源域的标签丰富数据和目标域的标签不确定或标签贫乏数据，学习一种鲁棒的目标检测器，学习过程依赖于DDA中使用的DDA模型或原理。源域和目标域之间的分布不尽相似或完全不同。经过训练的目标检测器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="配环境时那些奇怪的报错">
-<meta property="og:url" content="https://wenretium.github.io/2021/05/31/Hello%20Blog/index.html">
+<meta property="og:title" content="A Survey of DDAOD">
+<meta property="og:url" content="https://wenretium.github.io/2022/03/06/A%20Survey%20of%20DDAOD/index.html">
 <meta property="og:site_name" content="Wenretium&#39;s Space">
-<meta property="og:description" content="记录一下。">
+<meta property="og:description" content="[Paper] DEEP DOMAIN ADAPTIVE OBJECT DETECTION 深度领域自适应目标检测(Deep domain adaptive object detection, DDAOD)是利用源域的标签丰富数据和目标域的标签不确定或标签贫乏数据，学习一种鲁棒的目标检测器，学习过程依赖于DDA中使用的DDA模型或原理。源域和目标域之间的分布不尽相似或完全不同。经过训练的目标检测器">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-05-30T16:22:16.000Z">
-<meta property="article:modified_time" content="2021-05-31T07:36:46.419Z">
+<meta property="og:image" content="https://wenretium.github.io/2022/03/06/A%20Survey%20of%20DDAOD/image-20220306191447776.png">
+<meta property="og:image" content="https://wenretium.github.io/2022/03/06/A%20Survey%20of%20DDAOD/image-20220306191507197.png">
+<meta property="og:image" content="https://wenretium.github.io/2022/03/06/A%20Survey%20of%20DDAOD/image-20220306191521236.png">
+<meta property="og:image" content="https://wenretium.github.io/2022/03/06/A%20Survey%20of%20DDAOD/image-20220306191537765.png">
+<meta property="article:published_time" content="2022-03-06T11:19:00.000Z">
+<meta property="article:modified_time" content="2022-03-06T11:19:42.167Z">
 <meta property="article:author" content="Wenretium">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wenretium.github.io/2022/03/06/A%20Survey%20of%20DDAOD/image-20220306191447776.png">
   
     <link rel="alternative" href="/atom.xml" title="Wenretium&#39;s Space" type="application/atom+xml">
   
@@ -166,20 +171,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Hello Blog" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-A Survey of DDAOD" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      配环境时那些奇怪的报错
+      A Survey of DDAOD
     </h1>
   
 
         
-        <a href="/2021/05/31/Hello%20Blog/" class="archive-article-date">
-  	<time datetime="2021-05-30T16:22:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-31</time>
+        <a href="/2022/03/06/A%20Survey%20of%20DDAOD/" class="archive-article-date">
+  	<time datetime="2022-03-06T11:19:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-06</time>
 </a>
      
 
@@ -190,7 +195,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">380字</span>
+        <span class="post-count">3.5k字</span>
       </span>
     </span>
 
@@ -199,7 +204,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">2分</span>
+        <span class="post-count">13分</span>
       </span>
     </span>
 </div>
@@ -219,21 +224,104 @@
 
 
 	
-		<p>记录一下。</p>
-<span id="more"></span>
-<h2 id="1-ImportError-cannot-import-name-‘NoReturn’">1. ImportError: cannot import name ‘NoReturn’</h2>
-<p>python3.6下使用pip时报错：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;/home/wangyatian/miniconda3/envs/DSFD_env/bin/pip&quot;, line 6, in &lt;module&gt;</span><br><span class="line">    from pip._internal.cli.main import main</span><br><span class="line">  File &quot;/home/wangyatian/miniconda3/envs/DSFD_env/lib/python3.6/site-packages/pip/_internal/cli/main.py&quot;, line 9, in &lt;module&gt;</span><br><span class="line">    from pip._internal.cli.autocompletion import autocomplete</span><br><span class="line">  File &quot;/home/wangyatian/miniconda3/envs/DSFD_env/lib/python3.6/site-packages/pip/_internal/cli/autocompletion.py&quot;, line 10, in &lt;module&gt;</span><br><span class="line">    from pip._internal.cli.main_parser import create_main_parser</span><br><span class="line">  File &quot;/home/wangyatian/miniconda3/envs/DSFD_env/lib/python3.6/site-packages/pip/_internal/cli/main_parser.py&quot;, line 8, in &lt;module&gt;</span><br><span class="line">    from pip._internal.cli import cmdoptions</span><br><span class="line">  File &quot;/home/wangyatian/miniconda3/envs/DSFD_env/lib/python3.6/site-packages/pip/_internal/cli/cmdoptions.py&quot;, line 30, in &lt;module&gt;</span><br><span class="line">    from pip._internal.utils.hashes import STRONG_HASHES</span><br><span class="line">  File &quot;/home/wangyatian/miniconda3/envs/DSFD_env/lib/python3.6/site-packages/pip/_internal/utils/hashes.py&quot;, line 2, in &lt;module&gt;</span><br><span class="line">    from typing import TYPE_CHECKING, BinaryIO, Dict, Iterator, List, NoReturn</span><br><span class="line">ImportError: cannot import name &#x27;NoReturn&#x27;</span><br></pre></td></tr></table></figure>
-<p>解决方法：重装python版本，从3.6.0更换为3.6.5（没有试过3.6的其他版本）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install python==3.6.5</span><br></pre></td></tr></table></figure>
-<p>再次使用pip时会有以下警告，但是好歹能用了。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">WARNING: Value for scheme.headers does not match. Please report this to &lt;https://github.com/pypa/pip/issues/9617&gt;</span><br><span class="line">distutils: /home/wangyatian/miniconda3/envs/DSFD_env/include/python3.6m/UNKNOWN</span><br><span class="line">sysconfig: /home/wangyatian/miniconda3/envs/DSFD_env/include/python3.6m</span><br><span class="line">WARNING: Additional context:</span><br><span class="line">user = False</span><br><span class="line">home = None</span><br><span class="line">root = None</span><br><span class="line">prefix = None</span><br></pre></td></tr></table></figure>
-<h2 id="2-import-torch报错">2. import torch报错</h2>
-<p>python==3.6.0</p>
-<p>pytorch==1.8.0</p>
-<p>import torch报错</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> File &quot;/home/wangyatian/miniconda3/envs/python36/lib/python3.6/site-packages/torch/init.py&quot;, line 196, in &lt;module&gt;</span><br><span class="line">    from torch._C import *</span><br><span class="line">ImportError: /home/wangyatian/miniconda3/envs/python36/lib/python3.6/site-packages/torch/lib/libtorch_python.so: undefined symbol: PySlice_Unpack</span><br></pre></td></tr></table></figure>
-<p>将python版本改为3.6.3即可</p>
+		<p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2002.06797">[Paper]</a></p>
+<h2 id="DEEP-DOMAIN-ADAPTIVE-OBJECT-DETECTION">DEEP DOMAIN ADAPTIVE OBJECT DETECTION</h2>
+<p>深度领域自适应目标检测(Deep domain adaptive object detection, DDAOD)是利用源域的标签丰富数据和目标域的标签不确定或标签贫乏数据，学习一种鲁棒的目标检测器，学习过程依赖于DDA中使用的DDA模型或原理。源域和目标域之间的分布不尽相似或完全不同。经过训练的目标检测器有望在目标域取得良好的性能。</p>
+<p>从以下五个角度来划分DDAOD方法：</p>
+<ul>
+<li><strong>Mechanism to address domain shift</strong>: discrepancy-based, adversarial-based, reconstruction-based, hybrid and others</li>
+<li><strong>One-step vs. multi-step adaptation methods</strong>: 两个domain直接相关，一步迁移；两个domain有一点重叠（overlap），用一些桥来连接两个看起来不相关的domain，通过桥实行一步DA，称为multi-step DA</li>
+<li><strong>Labeled data of the target domain</strong>: supervised, semi-supervised, weakly-supervised, few-shot and unsupervised</li>
+<li><strong>Base detector</strong>: based on some existed excellent detectors, such as Faster RCNN, YOLO, SSD, etc</li>
+<li><strong>Open source or not</strong></li>
+</ul>
+<h2 id="A-Discrepancy-based-DDAOD">A. Discrepancy-based DDAOD</h2>
+<p>基于差异的DDAOD，使用目标源数据（有或无标注）来微调网络，从而缩小域差距。</p>
+<h3 id="A-Robust-Learning-Approach-to-Domain-Adaptive-Object-Detection-ICCV-2019"><em>A Robust Learning Approach to Domain Adaptive Object Detection (ICCV 2019)</em></h3>
+<p>提出了一个鲁棒的学习方法，将问题归为用带噪声的标注训练。先将检测模型在源域训练好，在目标域上进行检测，得到一系列目标预测框。将这些框看作带噪声的真实标注框，训练一个目标域上的检测模型。</p>
+<h3 id="Exploring-Object-Relation-in-Mean-Teacher-for-Cross-Domain-Detection-CVPR-2019"><em>Exploring Object Relation in Mean Teacher for Cross-Domain Detection (CVPR 2019)</em></h3>
+<p>提出了适用于跨领域检测的Mean Teacher paradigm，并提出了Mean Teacher with Object Relations (MTOR)。该方法在Faster R-CNN的框架下，通过将对象关系整合到一致性成本的测度中（integrating the object relations into the measure of consistency cost ），对Mean Teacher进行了全新的改造。</p>
+<h3 id="Pedestrian-detection-with-unsupervised-multispectral-feature-learning-using-deep-neural-networks-Inf-Fusion-2019"><em>Pedestrian detection with unsupervised multispectral feature learning using deep neural networks (Inf Fusion 2019)</em></h3>
+<p>提出了一个自动标注框架，利用多光谱数据中的互补信息，在可见光通道和热通道中迭代标记行人实例。自动标注框架由迭代标注、时间跟踪和标签融合三部分组成。为了学习用于鲁棒行人检测的多光谱特征，获得的注释被喂入一个two-stream region proposal network (TS-RPN)。</p>
+<h2 id="B-Adversarial-based-DDAOD">B. Adversarial-based DDAOD</h2>
+<p>基于对抗的DDAOD，使用域判别器和对抗训练，从而鼓励源域和目标域的域融合。域判别器的工作是区分一个数据点是来自源域还是目标域。</p>
+<h3 id="Domain-Adaptive-Faster-R-CNN-for-Object-Detection-in-the-Wild-CVPR-2018"><em>Domain Adaptive Faster R-CNN for Object Detection in the Wild (CVPR 2018)</em></h3>
+<p>第一个将DA用于目标检测任务的工作。作者用H-divergence来衡量源域和目标域间数据分布的差异，并在特征上进行对抗训练。设计了三个自适应组件：图像级自适应、实例级自适应和一致性检查（image-level adaptation, instancelevel adaptation and consistency check）。</p>
+<h3 id="Adapting-Object-Detectors-via-Selective-Cross-Domain-Alignment-in-Proceedings-of-CVPR-2019"><em>Adapting Object Detectors via Selective Cross-Domain Alignment (in Proceedings of CVPR 2019)</em></h3>
+<p>受检测的local nature启发，提出了一个region-level的适应框架。为了有效、稳健地解决“where to look”和“how to align”的问题，设计了区域挖掘（region mining）和调整后的区域级对齐（adjusted region-level alignment）两个关键组件。adjusted region-level alignment使用两个生成器和两个判别器对抗性地对齐鉴别区域。</p>
+<h3 id="Few-shot-Adaptive-Faster-RCNN-in-Proceedings-of-CVPR-2019"><em>Few-shot Adaptive Faster RCNN (in Proceedings of CVPR 2019)</em></h3>
+<p>提出了一个few-shot adaptive Faster-RCNN结构，称为FAFRCNN。该方法由图像级和实例级两个自适应模块组成，结合基于域分类器的特征配对机制（a feature pairing mechanism followed domain classifier）和用于稳定自适应的强正则化机制（a strong regularization for stable adaptation）。</p>
+<h3 id="Strong-Weak-Distribution-Alignment-for-Adaptive-Object-Detection-in-Proceedings">*Strong-Weak Distribution Alignment for Adaptive Object Detection (in Proceedings</h3>
+<p>of CVPR 2019)*</p>
+<p>提出了一种结合弱全局对齐和强局部对齐的无监督自适应目标检测方法，称为强-弱对齐域校准模型（Strong-Weak Domain Alignment model）。采用局部域分类器网络进行强局部对齐，采用全局域分类器进行弱全局对齐。</p>
+<h3 id="Multi-Adversarial-Faster-RCNN-for-Unrestricted-Object-Detection-ICCV-2019"><em>Multi-Adversarial Faster-RCNN for Unrestricted Object Detection (ICCV 2019)</em></h3>
+<p>提出了一个多重对抗（multi-adversarial）的Faster RCNN(MAF)检测器，用于解决不受限制的目标检测问题。该方法包括两个模块，即分级域特征对齐（hierarchical domain feature alignment）和聚合提议特征对齐（aggregated proposal feature alignment）。</p>
+<h3 id="SCL-Towards-Accurate-Domain-Adaptive-Object-Detection-via-Gradient-Detach-Based-Stacked-Complementary-Losses-2019"><em>SCL: Towards Accurate Domain Adaptive Object Detection via Gradient Detach Based Stacked Complementary Losses (2019)</em></h3>
+<p>提出了一种基于梯度分离的堆叠互补损失(stacked complementary losses, SCL)方法，用于无监督域自适应目标检测。该方法利用多重互补损耗进行优化，并提出梯度分离训练来学习更有区别的表示。</p>
+<h3 id="Synthetic-to-Real-Domain-Adaptation-for-Object-Instance-Segmentation-IJCNN-2019"><em>Synthetic-to-Real Domain Adaptation for Object Instance Segmentation (IJCNN 2019)</em></h3>
+<p>提出了一种合成域到真实域的对象实例分割方法。有三种不同的特征适配模块，即全局基础特征适配模块、局部实例特征适配模块和精细掩码特征适配模块（global-level base feature adaptation module, local-level instance feature adaptation module, and subtle-level mask feature adaptation module）。</p>
+<h3 id="iFAN-Image-Instance-Full-Alignment-Networks-for-Adaptive-Object-Detection-AAAI-2020"><em>iFAN: Image-Instance Full Alignment Networks for Adaptive Object Detection (AAAI 2020)</em></h3>
+<p>提出了图像-实例完全对齐网络(Image-Instance Full Alignment Networks, iFAN)，解决无监督领域自适应目标检测。包含两个对齐模块：图像级对齐通过层次嵌套的方式训练对抗域对多尺度特征进行对齐；完全对齐利用深度语义信息和精细的实例表示建立类别和领域之间的强关联。</p>
+<h3 id="Harmonizing-Transferability-and-Discriminability-for-Adapting-Object-Detectors-CVPR-2020"><em>Harmonizing Transferability and Discriminability for Adapting Object Detectors (CVPR 2020)</em></h3>
+<p>为了协调自适应目标检测器的可转移性（transferability）和可分辨性（discriminability），提出了分级可转移性校准网络(Hierarchical Transferability Calibration Network, HTCN)，它分层次(local-region/image/instance)校准特征表示的可转移性。通过对抗性训练过程实现不同层次的对齐，并在结构中加入三个域判别器。</p>
+<h2 id="C-Reconstruction-based-DDAOD">C. Reconstruction-based DDAOD</h2>
+<p>基于重建的DDAOD，假设对源样本和目标样本的重建有助于提升DA目标检测的性能。</p>
+<h3 id="Cross-Domain-Car-Detection-Using-Unsupervised-Image-toImage-Translation-From-Day-to-Night-IJCNN-2019"><em>Cross-Domain Car Detection Using Unsupervised Image-toImage Translation: From Day to Night (IJCNN 2019)</em></h3>
+<p>提出了一种基于无监督的图像到图像转换的跨域汽车检测方法。使用CycleGAN将图像从白天域转换到夜间域，生成一个人造数据集（假数据集）。最后利用源域的标注，对伪数据集进行训练。</p>
+<h3 id="Cross-Domain-Adaptation-for-on-Road-Object-Detection-Using-Multimodal-Structure-Consistent-Image-to-Image-Translation-ICIP-2019"><em>Cross Domain Adaptation for on-Road Object Detection Using Multimodal Structure-Consistent Image-to-Image Translation (ICIP 2019)</em></h3>
+<p>提出了一种多模态结构一致的图像到图像的转换模型，实现了领域自适应车辆检测。图像转换模型在复杂的领域内生成不同的、结构保持不变的转换图像。</p>
+<h3 id="Domain-Adaptive-Pedestrian-Detection-in-Thermal-Images-ICIP-2019"><em>Domain-Adaptive Pedestrian Detection in Thermal Images (ICIP 2019)</em></h3>
+<p>提出了一种基于有限标注的热红外图像行人检测方法。为了解决热图像和彩色图像之间的领域偏移问题，作者提出学习一对图像转换器来转换两种模式之间的图像，并联合一个行人检测器。</p>
+<h3 id="Borrow-From-Anywhere-Pseudo-Multi-Modal-Object-Detection-in-Thermal-Imagery-CVPR-2019"><em>Borrow From Anywhere: Pseudo Multi-Modal Object Detection in Thermal Imagery (CVPR 2019)</em></h3>
+<p>提出了一种利用图像到图像的转换框架，生成给定热图像的伪RGB等价，然后采用多模态目标检测结构对热图像进行检测的方法。</p>
+<h3 id="IR2VI-Enhanced-Night-Environmental-Perception-by-Unsupervised-Thermal-Image-Translation-CVPRW-2018"><em>IR2VI: Enhanced Night Environmental Perception by Unsupervised Thermal Image Translation (CVPRW 2018)</em></h3>
+<p>提出了一种基于GAN的无监督图像转换框架。红外线到可见光的算法称为IR2VI。目标检测器对标注的可见图像进行训练，并直接应用于转换后的伪可见图像。</p>
+<h2 id="D-Hybrid-DDAOD">D. Hybrid DDAOD</h2>
+<p>混合DDAOD，同时使用上述两种或多种机制来获得更好的性能。</p>
+<h3 id="Cross-Domain-Weakly-Supervised-Object-Detection-Through-Progressive-Domain-Adaptation-CVPR-2018"><em>Cross-Domain Weakly-Supervised Object Detection Through Progressive Domain Adaptation (CVPR 2018)</em></h3>
+<p>提出了一种新的任务——跨域弱监督目标检测方法，该方法在目标域上可以实现图像级标注。为了解决这一问题，提出了一种两步渐进域自适应技术。该方法对两种人工和自动生成的样本进行了微调。采用基于CycleGAN的图像-图像转换方法，人工生成样本，通过伪标记获得自动生成的样本。</p>
+<h3 id="Pixel-and-feature-level-based-domain-adaptation-for-object-detection-in-autonomous-driving-Neurocomputing-2019"><em>Pixel and feature level based domain adaptation for object detection in autonomous driving (Neurocomputing 2019)</em></h3>
+<p>提出了一种基于像素和特征级的域自适应目标检测器。该方法由两个模块组成，主要基于CycleGAN的像素级域自适应(pixel-level domain adaptation, PDA)，以及基于Faster RCNN的特征级域适应(feature-level domain adaptation, FDA)。这两个模块可以集成在一起，并以端到端方式进行训练。</p>
+<h3 id="Diversify-and-Match-A-Domain-Adaptive-Representation-Learning-Paradigm-for-Object-Detection-in-Proceedings-of-CVPR-2019"><em>Diversify and Match: A Domain Adaptive Representation Learning Paradigm for Object Detection (in Proceedings of CVPR 2019)</em></h3>
+<p>为了同时解决像素级适配的不完美转换问题和特征级适配的源偏可分辨性问题，提出了一种DA表征学习范式用于目标检测。它包括领域多样化阶段（Domain Diversification, DD）和多领域不变表征学习（Multidomain-invariant Representation Learning, MRL）阶段。</p>
+<h3 id="Self-training-and-adversarial-background-regularization-for-unsupervised-domain-adaptive-one-stage-object-detection-in-Proceedings-of-CVPR-2019"><em>Self-training and adversarial background regularization for unsupervised domain adaptive one-stage object detection (in Proceedings of CVPR 2019)</em></h3>
+<p>提出了一种DA单阶段目标检测方法，由弱自训练(weak self-training, WST)和对抗背景分数正则化(adversarial background score regularization, BSR)组成。WST设法降低不准确的伪标签的不利影响；BSR通过对目标背景提取具有区别性的特征，来减少域偏移。</p>
+<h3 id="Domain-Adaptation-for-Object-Detection-via-Style-Consistency-2019"><em>Domain Adaptation for Object Detection via Style Consistency (2019)</em></h3>
+<p>提出了一种两步DA检测器，包括基于风格迁移的低阶自适应和基于鲁棒伪标记的高阶自适应。</p>
+<h3 id="Progressive-Domain-Adaptation-for-Object-Detection-WACV-2020"><em>Progressive Domain Adaptation for Object Detection (WACV 2020)</em></h3>
+<p>提出了一种渐进式DA目标检测器。通过将源图像转换成目标图像，构造了一个中间域。为了解决域转移问题，采用对抗学习，对特征级别的分布进行对齐，并采用加权任务损失处理中间域图像质量的不平衡。</p>
+<h3 id="Unsupervised-Domain-Adaptation-for-Object-Detection-via-CrossDomain-Semi-Supervised-Learning-2019"><em>Unsupervised Domain Adaptation for Object Detection via CrossDomain Semi-Supervised Learning (2019)</em></h3>
+<p>提出了跨域半监督学习(Cross-Domain Semi-Supervised Learning, CDSSL)框架克服了以前许多对抗方法的局限性。其局限性是它们不能解决领域内容分布的差距，而这对目标检测器来说也是很重要的。CDSSL框架利用高质量的伪标签直接从目标域学习，并进行细粒度的域转移，以减少风格差距。此外，本文还提出了基于渐进式置信度（progressive-confidence-based）的标签锐化策略和不平衡抽样策略。与之前在mAP上的最佳工作相比，性能提高了2.2% - 9.5%。</p>
+<h3 id="Cross-domain-Object-Detection-through-Coarse-to-Fine-Feature-Adaptation-CVPR-2020"><em>Cross-domain Object Detection through Coarse-to-Fine Feature Adaptation (CVPR 2020)</em></h3>
+<p>提出了一种由粗到细的跨域两阶段目标检测的特征自适应方法。它包括两个适应模块，即基于注意力的区域转移(Attentionbased Region Transfer, ART)和基于原型的语义对齐(Prototype-based Semantic<br>
+Alignment, PSA)。ART提取前景区域并采用注意力机制，通过多层对抗学习对其特征分布进行对齐。PSA利用原型在语义级别执行前景的条件分布对齐。根据所进行的实验，达到了最先进的结果。</p>
+<h2 id="E-Other-DDAOD">E. Other DDAOD</h2>
+<p>其他的DDAOD方法不能被归入上述四类其中。他们使用其他机制，如图诱导原型对齐、分类正则化来寻找域对齐。</p>
+<h3 id="Cross-domain-Detection-via-Graph-induced-Prototype-Alignment-CVPR-2020"><em>Cross-domain Detection via Graph-induced Prototype Alignment (CVPR 2020)</em></h3>
+<p>为了解决在局部实例级上对齐源域和目标域、跨域检测任务中的类不平衡等问题，提出了Graphinduced Prototype Alignment (GPA)框架，并将其嵌入到一个两阶段检测器Faster R-CNN中。实验结果表明，该框架在很大程度上优于现有的算法。</p>
+<h3 id="Exploring-Categorical-Regularization-for-Domain-Adaptive-Object-Detection-CVPR-2020"><em>Exploring Categorical Regularization for Domain Adaptive Object Detection (CVPR 2020)</em></h3>
+<p>考虑到之前的工作仍然忽略了关键图像区域的匹配和跨域的重要实例，提出了一个分类正则化框架。它可以作为多个DA Faster R-CNN 方法上的即插即用组件。设计了两个正则化模块。第一个模块利用了分类CNN的弱定位能力，第二个模块利用了图像级和实例级预测之间的分类一致性。</p>
+<h2 id="CONCLUSION-AND-FUTURE-DIRECTIONS">CONCLUSION AND FUTURE DIRECTIONS</h2>
+<p>本论文调研了27种DDAOD方法，根据5种因素进行分类归纳。混合方法效果最好，其次是基于对抗的方法。结果表明，对抗性训练和纳入更多的适应机制效果更好。但是，DDAOD方法的效果与在真正有标注的目标域数据上进行训练的效果相比，还是有明显的差距。</p>
+<p>因此，还有许多工作要做。如下：</p>
+<ul>
+<li>
+<p>一种很有前景的解决方案是进一步结合不同类别适应方法的优点，如<em>Domain Adaptation for Object Detection via Style Consistency</em>，它结合风格转移和鲁棒伪标签，获得更好的性能。一种可能的组合是对抗性地训练检测器，并使用训练过的检测器为目标样本生成伪标签。</p>
+</li>
+<li>
+<p>另一个有前途的方向是探索检测的局部性质（local nature）。例如，生成类似于目标域实例级样本的模拟实例级样本，然后利用生成的实例级图像块和目标域背景图像合成训练样本进行检测训练。</p>
+</li>
+<li>
+<p>大多数工作涉及同质的DDAOD，而异构的DDAOD由于存在更大的域差距而面临更大的挑战。因此，从具有大量标记数据的可见域到标记数据昂贵的热红外域的适应性研究是值得开展的。希望在这方面有较高影响力的作品。</p>
+</li>
+<li>
+<p>利用最先进的领域自适应分类模型，嵌入检测框架，从零开始探索领域转移检测也是一个很有前途的方向。</p>
+</li>
+</ul>
+<p><img src="/2022/03/06/A%20Survey%20of%20DDAOD/image-20220306191447776.png" alt="image-20220306191447776"></p>
+<p><img src="/2022/03/06/A%20Survey%20of%20DDAOD/image-20220306191507197.png" alt="image-20220306191507197"></p>
+<p><img src="/2022/03/06/A%20Survey%20of%20DDAOD/image-20220306191521236.png" alt="image-20220306191521236"></p>
+<p><img src="/2022/03/06/A%20Survey%20of%20DDAOD/image-20220306191537765.png" alt="image-20220306191537765"></p>
 
 	
 
@@ -253,7 +341,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="/categories/深度学习/防坑指南//" class="article-tag-list-link color5">防坑指南</a>
+        			<a href="/categories/深度学习/DA//" class="article-tag-list-link color3">DA</a>
         		</li>
       		
 		</ul>
@@ -308,7 +396,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://wenretium.github.io/2021/05/31/Hello%20Blog/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://wenretium.github.io/2022/03/06/A%20Survey%20of%20DDAOD/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -322,15 +410,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/05/31/%E7%94%A8GAN%E7%94%9F%E6%88%90MNIST%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          用GAN生成MNIST手写数字
-        
-      </div>
-    </a>
   
+    <a href="/2021/12/31/2021%E5%B9%B4%E6%8A%A5/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">2021年报</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -355,7 +439,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-ImportError-cannot-import-name-%E2%80%98NoReturn%E2%80%99"><span class="toc-number">1.</span> <span class="toc-text">1. ImportError: cannot import name ‘NoReturn’</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-import-torch%E6%8A%A5%E9%94%99"><span class="toc-number">2.</span> <span class="toc-text">2. import torch报错</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#DEEP-DOMAIN-ADAPTIVE-OBJECT-DETECTION"><span class="toc-number">1.</span> <span class="toc-text">DEEP DOMAIN ADAPTIVE OBJECT DETECTION</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#A-Discrepancy-based-DDAOD"><span class="toc-number">2.</span> <span class="toc-text">A. Discrepancy-based DDAOD</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-Robust-Learning-Approach-to-Domain-Adaptive-Object-Detection-ICCV-2019"><span class="toc-number">2.1.</span> <span class="toc-text">A Robust Learning Approach to Domain Adaptive Object Detection (ICCV 2019)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Exploring-Object-Relation-in-Mean-Teacher-for-Cross-Domain-Detection-CVPR-2019"><span class="toc-number">2.2.</span> <span class="toc-text">Exploring Object Relation in Mean Teacher for Cross-Domain Detection (CVPR 2019)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pedestrian-detection-with-unsupervised-multispectral-feature-learning-using-deep-neural-networks-Inf-Fusion-2019"><span class="toc-number">2.3.</span> <span class="toc-text">Pedestrian detection with unsupervised multispectral feature learning using deep neural networks (Inf Fusion 2019)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#B-Adversarial-based-DDAOD"><span class="toc-number">3.</span> <span class="toc-text">B. Adversarial-based DDAOD</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Domain-Adaptive-Faster-R-CNN-for-Object-Detection-in-the-Wild-CVPR-2018"><span class="toc-number">3.1.</span> <span class="toc-text">Domain Adaptive Faster R-CNN for Object Detection in the Wild (CVPR 2018)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Adapting-Object-Detectors-via-Selective-Cross-Domain-Alignment-in-Proceedings-of-CVPR-2019"><span class="toc-number">3.2.</span> <span class="toc-text">Adapting Object Detectors via Selective Cross-Domain Alignment (in Proceedings of CVPR 2019)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Few-shot-Adaptive-Faster-RCNN-in-Proceedings-of-CVPR-2019"><span class="toc-number">3.3.</span> <span class="toc-text">Few-shot Adaptive Faster RCNN (in Proceedings of CVPR 2019)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Strong-Weak-Distribution-Alignment-for-Adaptive-Object-Detection-in-Proceedings"><span class="toc-number">3.4.</span> <span class="toc-text">*Strong-Weak Distribution Alignment for Adaptive Object Detection (in Proceedings</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Multi-Adversarial-Faster-RCNN-for-Unrestricted-Object-Detection-ICCV-2019"><span class="toc-number">3.5.</span> <span class="toc-text">Multi-Adversarial Faster-RCNN for Unrestricted Object Detection (ICCV 2019)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SCL-Towards-Accurate-Domain-Adaptive-Object-Detection-via-Gradient-Detach-Based-Stacked-Complementary-Losses-2019"><span class="toc-number">3.6.</span> <span class="toc-text">SCL: Towards Accurate Domain Adaptive Object Detection via Gradient Detach Based Stacked Complementary Losses (2019)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Synthetic-to-Real-Domain-Adaptation-for-Object-Instance-Segmentation-IJCNN-2019"><span class="toc-number">3.7.</span> <span class="toc-text">Synthetic-to-Real Domain Adaptation for Object Instance Segmentation (IJCNN 2019)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#iFAN-Image-Instance-Full-Alignment-Networks-for-Adaptive-Object-Detection-AAAI-2020"><span class="toc-number">3.8.</span> <span class="toc-text">iFAN: Image-Instance Full Alignment Networks for Adaptive Object Detection (AAAI 2020)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Harmonizing-Transferability-and-Discriminability-for-Adapting-Object-Detectors-CVPR-2020"><span class="toc-number">3.9.</span> <span class="toc-text">Harmonizing Transferability and Discriminability for Adapting Object Detectors (CVPR 2020)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-Reconstruction-based-DDAOD"><span class="toc-number">4.</span> <span class="toc-text">C. Reconstruction-based DDAOD</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Cross-Domain-Car-Detection-Using-Unsupervised-Image-toImage-Translation-From-Day-to-Night-IJCNN-2019"><span class="toc-number">4.1.</span> <span class="toc-text">Cross-Domain Car Detection Using Unsupervised Image-toImage Translation: From Day to Night (IJCNN 2019)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cross-Domain-Adaptation-for-on-Road-Object-Detection-Using-Multimodal-Structure-Consistent-Image-to-Image-Translation-ICIP-2019"><span class="toc-number">4.2.</span> <span class="toc-text">Cross Domain Adaptation for on-Road Object Detection Using Multimodal Structure-Consistent Image-to-Image Translation (ICIP 2019)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Domain-Adaptive-Pedestrian-Detection-in-Thermal-Images-ICIP-2019"><span class="toc-number">4.3.</span> <span class="toc-text">Domain-Adaptive Pedestrian Detection in Thermal Images (ICIP 2019)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Borrow-From-Anywhere-Pseudo-Multi-Modal-Object-Detection-in-Thermal-Imagery-CVPR-2019"><span class="toc-number">4.4.</span> <span class="toc-text">Borrow From Anywhere: Pseudo Multi-Modal Object Detection in Thermal Imagery (CVPR 2019)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IR2VI-Enhanced-Night-Environmental-Perception-by-Unsupervised-Thermal-Image-Translation-CVPRW-2018"><span class="toc-number">4.5.</span> <span class="toc-text">IR2VI: Enhanced Night Environmental Perception by Unsupervised Thermal Image Translation (CVPRW 2018)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#D-Hybrid-DDAOD"><span class="toc-number">5.</span> <span class="toc-text">D. Hybrid DDAOD</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Cross-Domain-Weakly-Supervised-Object-Detection-Through-Progressive-Domain-Adaptation-CVPR-2018"><span class="toc-number">5.1.</span> <span class="toc-text">Cross-Domain Weakly-Supervised Object Detection Through Progressive Domain Adaptation (CVPR 2018)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pixel-and-feature-level-based-domain-adaptation-for-object-detection-in-autonomous-driving-Neurocomputing-2019"><span class="toc-number">5.2.</span> <span class="toc-text">Pixel and feature level based domain adaptation for object detection in autonomous driving (Neurocomputing 2019)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Diversify-and-Match-A-Domain-Adaptive-Representation-Learning-Paradigm-for-Object-Detection-in-Proceedings-of-CVPR-2019"><span class="toc-number">5.3.</span> <span class="toc-text">Diversify and Match: A Domain Adaptive Representation Learning Paradigm for Object Detection (in Proceedings of CVPR 2019)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Self-training-and-adversarial-background-regularization-for-unsupervised-domain-adaptive-one-stage-object-detection-in-Proceedings-of-CVPR-2019"><span class="toc-number">5.4.</span> <span class="toc-text">Self-training and adversarial background regularization for unsupervised domain adaptive one-stage object detection (in Proceedings of CVPR 2019)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Domain-Adaptation-for-Object-Detection-via-Style-Consistency-2019"><span class="toc-number">5.5.</span> <span class="toc-text">Domain Adaptation for Object Detection via Style Consistency (2019)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Progressive-Domain-Adaptation-for-Object-Detection-WACV-2020"><span class="toc-number">5.6.</span> <span class="toc-text">Progressive Domain Adaptation for Object Detection (WACV 2020)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Unsupervised-Domain-Adaptation-for-Object-Detection-via-CrossDomain-Semi-Supervised-Learning-2019"><span class="toc-number">5.7.</span> <span class="toc-text">Unsupervised Domain Adaptation for Object Detection via CrossDomain Semi-Supervised Learning (2019)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cross-domain-Object-Detection-through-Coarse-to-Fine-Feature-Adaptation-CVPR-2020"><span class="toc-number">5.8.</span> <span class="toc-text">Cross-domain Object Detection through Coarse-to-Fine Feature Adaptation (CVPR 2020)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#E-Other-DDAOD"><span class="toc-number">6.</span> <span class="toc-text">E. Other DDAOD</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Cross-domain-Detection-via-Graph-induced-Prototype-Alignment-CVPR-2020"><span class="toc-number">6.1.</span> <span class="toc-text">Cross-domain Detection via Graph-induced Prototype Alignment (CVPR 2020)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Exploring-Categorical-Regularization-for-Domain-Adaptive-Object-Detection-CVPR-2020"><span class="toc-number">6.2.</span> <span class="toc-text">Exploring Categorical Regularization for Domain Adaptive Object Detection (CVPR 2020)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CONCLUSION-AND-FUTURE-DIRECTIONS"><span class="toc-number">7.</span> <span class="toc-text">CONCLUSION AND FUTURE DIRECTIONS</span></a></li></ol>
                     </div>
                 </span>
             </div>

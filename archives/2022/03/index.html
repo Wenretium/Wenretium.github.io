@@ -6,17 +6,13 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://Wenretium.github.io">
-  <title>配环境时那些奇怪的报错 | Wenretium&#39;s Space</title>
+  <title>Archives: 2022/3 | Wenretium&#39;s Space</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录一下。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="配环境时那些奇怪的报错">
-<meta property="og:url" content="https://wenretium.github.io/2021/05/31/Hello%20Blog/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Wenretium&#39;s Space">
+<meta property="og:url" content="https://wenretium.github.io/archives/2022/03/index.html">
 <meta property="og:site_name" content="Wenretium&#39;s Space">
-<meta property="og:description" content="记录一下。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-05-30T16:22:16.000Z">
-<meta property="article:modified_time" content="2021-05-31T07:36:46.419Z">
 <meta property="article:author" content="Wenretium">
 <meta name="twitter:card" content="summary">
   
@@ -166,84 +162,37 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Hello Blog" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      配环境时那些奇怪的报错
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2022" class="archive-year">2022</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2022/03/06/A%20Survey%20of%20DDAOD/" class="archive-article-date">
+  	<time datetime="2022-03-06T11:19:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-06</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2022/03/06/A%20Survey%20of%20DDAOD/">A Survey of DDAOD</a>
     </h1>
   
 
-        
-        <a href="/2021/05/31/Hello%20Blog/" class="archive-article-date">
-  	<time datetime="2021-05-30T16:22:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-31</time>
-</a>
-     
-
-
-
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">380字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">2分</span>
-      </span>
-    </span>
-</div>
-
-   
-
-
- 
-        <span class="archive-article-date">
-            阅读量 <span id="busuanzi_value_page_pv"></span>
-        </span>
-    
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-
-
-	
-		<p>记录一下。</p>
-<span id="more"></span>
-<h2 id="1-ImportError-cannot-import-name-‘NoReturn’">1. ImportError: cannot import name ‘NoReturn’</h2>
-<p>python3.6下使用pip时报错：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;/home/wangyatian/miniconda3/envs/DSFD_env/bin/pip&quot;, line 6, in &lt;module&gt;</span><br><span class="line">    from pip._internal.cli.main import main</span><br><span class="line">  File &quot;/home/wangyatian/miniconda3/envs/DSFD_env/lib/python3.6/site-packages/pip/_internal/cli/main.py&quot;, line 9, in &lt;module&gt;</span><br><span class="line">    from pip._internal.cli.autocompletion import autocomplete</span><br><span class="line">  File &quot;/home/wangyatian/miniconda3/envs/DSFD_env/lib/python3.6/site-packages/pip/_internal/cli/autocompletion.py&quot;, line 10, in &lt;module&gt;</span><br><span class="line">    from pip._internal.cli.main_parser import create_main_parser</span><br><span class="line">  File &quot;/home/wangyatian/miniconda3/envs/DSFD_env/lib/python3.6/site-packages/pip/_internal/cli/main_parser.py&quot;, line 8, in &lt;module&gt;</span><br><span class="line">    from pip._internal.cli import cmdoptions</span><br><span class="line">  File &quot;/home/wangyatian/miniconda3/envs/DSFD_env/lib/python3.6/site-packages/pip/_internal/cli/cmdoptions.py&quot;, line 30, in &lt;module&gt;</span><br><span class="line">    from pip._internal.utils.hashes import STRONG_HASHES</span><br><span class="line">  File &quot;/home/wangyatian/miniconda3/envs/DSFD_env/lib/python3.6/site-packages/pip/_internal/utils/hashes.py&quot;, line 2, in &lt;module&gt;</span><br><span class="line">    from typing import TYPE_CHECKING, BinaryIO, Dict, Iterator, List, NoReturn</span><br><span class="line">ImportError: cannot import name &#x27;NoReturn&#x27;</span><br></pre></td></tr></table></figure>
-<p>解决方法：重装python版本，从3.6.0更换为3.6.5（没有试过3.6的其他版本）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install python==3.6.5</span><br></pre></td></tr></table></figure>
-<p>再次使用pip时会有以下警告，但是好歹能用了。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">WARNING: Value for scheme.headers does not match. Please report this to &lt;https://github.com/pypa/pip/issues/9617&gt;</span><br><span class="line">distutils: /home/wangyatian/miniconda3/envs/DSFD_env/include/python3.6m/UNKNOWN</span><br><span class="line">sysconfig: /home/wangyatian/miniconda3/envs/DSFD_env/include/python3.6m</span><br><span class="line">WARNING: Additional context:</span><br><span class="line">user = False</span><br><span class="line">home = None</span><br><span class="line">root = None</span><br><span class="line">prefix = None</span><br></pre></td></tr></table></figure>
-<h2 id="2-import-torch报错">2. import torch报错</h2>
-<p>python==3.6.0</p>
-<p>pytorch==1.8.0</p>
-<p>import torch报错</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> File &quot;/home/wangyatian/miniconda3/envs/python36/lib/python3.6/site-packages/torch/init.py&quot;, line 196, in &lt;module&gt;</span><br><span class="line">    from torch._C import *</span><br><span class="line">ImportError: /home/wangyatian/miniconda3/envs/python36/lib/python3.6/site-packages/torch/lib/libtorch_python.so: undefined symbol: PySlice_Unpack</span><br></pre></td></tr></table></figure>
-<p>将python版本改为3.6.3即可</p>
-
-	
-
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+        <div class="article-info info-on-right">
+          
+          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -253,158 +202,24 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="/categories/深度学习/防坑指南//" class="article-tag-list-link color5">防坑指南</a>
+        			<a href="/categories/深度学习/DA//" class="article-tag-list-link color3">DA</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://wenretium.github.io/2021/05/31/Hello%20Blog/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2021/05/31/%E7%94%A8GAN%E7%94%9F%E6%88%90MNIST%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          用GAN生成MNIST手写数字
-        
-      </div>
-    </a>
   
   
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-ImportError-cannot-import-name-%E2%80%98NoReturn%E2%80%99"><span class="toc-number">1.</span> <span class="toc-text">1. ImportError: cannot import name ‘NoReturn’</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-import-torch%E6%8A%A5%E9%94%99"><span class="toc-number">2.</span> <span class="toc-text">2. import torch报错</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-
-  
-
-  
-
- 
-
-   
-       <section id="comments" class="comments">
-         <style>
-           .comments{margin:30px;padding:10px;background:#fff}
-           @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-         </style>
-         <div id="vcomment" class="comment"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-<script src="https://cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-  var notify = 'false' == true ? true : false;
-  var verify = 'false' == true ? true : false;
-  new Valine({
-    av: AV,
-    el: '#vcomment',
-    notify: notify,
-    app_id: "5iEoKJ2lHrG2kiSRhsaXrcNe-9Nh9j0Va",
-    app_key: "nhDDz2LphDttAiVymTclOvQK",
-    placeholder: "Hello小伙伴，欢迎来到我的博客，请畅所欲言！留下邮箱可及时接收回复。",
-    avatar: "wavatar",
-  });
-</script>
-
-     </section>
-   
+    
 
 
           </div>
@@ -457,8 +272,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
