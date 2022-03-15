@@ -164,6 +164,136 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-(PaperReader) Domain Adaptive Faster R-CNN for Object Detection in the Wild" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+
+
+	
+		<h1>Domain Adaptive Faster R-CNN for Object Detection in the Wild</h1>
+<h2 id="1-Introduction">1. Introduction</h2>
+<p>本工作是第一个将DA用于目标检测的工作。适用于这样的无监督场景：源域有完全的监督，而目标域无监督。</p>
+<p>工作的核心思想是，在两个尺度上解决领域偏移问题：1）图像级image-level，比如图像风格、光照的不同；2）实例级instance-level，比如物体外形、尺寸的不同。</p>
+<p>贡献：</p>
+<ol>
+<li>对于跨领域目标检测任务，从概率学的角度进行了一次理论分析。</li>
+<li>设计了两个DA结构，能够分别在图像级和实例级上减少领域差异。</li>
+<li>更深入地研究，提出了一种一致性正则化方法(a consistency regularization)，来鼓励RPN不随领域改变。</li>
+<li>将提出的组件集成到Faster R-CNN模型中，整个模型可以端到端地训练。</li>
+</ol>
+<h2 id="2-Related-Work">2. Related Work</h2>
+<p>在相关工作中提到：CycleGAN这类不成对图像迁移的工作，可以看作是pixel-level的DA工作。但是现实中场景图像往往是高分辨率的（如自动驾驶），pixel-level的工作很难生成真实且高分辨率的图像。（所以这篇工作没有在pixel-level进行研究）</p>
+<h2 id="3-Preliminaries">3. Preliminaries</h2>
+<h3 id="3-1-Faster-R-CNN">3.1 Faster R-CNN</h3>
+<p><img src="/2022/03/16/(PaperReader)%20Domain%20Adaptive%20Faster%20R-CNN%20for%20Object%20Detection%20in%20the%20Wild/image-20220315222904933.png" alt="image-20220315222904933"></p>
+<p>检测损失函数：</p>
+<p><img src="/2022/03/16/(PaperReader)%20Domain%20Adaptive%20Faster%20R-CNN%20for%20Object%20Detection%20in%20the%20Wild/image-20220315222929944.png" alt="image-20220315222929944"></p>
+<h3 id="3-2-Distribution-Alignment-with-H-divergence">3.2. Distribution Alignment with H-divergence</h3>
+<p>H散度用于测量两组不同分布样本之间的散度。</p>
+<p>x是特征向量。h是域判别器，输出0到1的值，源域期望输出0，目标域期望输出1。假设$H$是一堆域判别器的集合，H散度定义了两个领域间的距离：</p>
+<p><img src="/2022/03/16/(PaperReader)%20Domain%20Adaptive%20Faster%20R-CNN%20for%20Object%20Detection%20in%20the%20Wild/image-20220315223345550.png" alt="image-20220315223345550"></p>
+<p>$err$是域判别器的错误率。两个领域间的距离，与表现最好的域判别器的错误率成反比。换句话说，如果最好的域判别器都很容易犯错，那么这两个领域就很难区分了，它们也更接近了。</p>
+<p>将产生特征向量x的网络设为f。为了对齐两个领域，我们需要促使f输出的特征向量能够去缩小$d_H(S,T)$：</p>
+<p><img src="/2022/03/16/(PaperReader)%20Domain%20Adaptive%20Faster%20R-CNN%20for%20Object%20Detection%20in%20the%20Wild/image-20220315224439547.png" alt="image-20220315224439547"></p>
+<p>缩小两个领域的距离$d_H(S,T)$，等价于，找到一个f，能够使最好的域判别器的错误率最高。<strong>而这是一个对抗学习的问题！！</strong></p>
+<h2 id="4-Domain-Adaptation-for-Object-Detection">4. Domain Adaptation for Object Detection</h2>
+<h3 id="4-1-A-Probabilistic-Perspective">4.1. A Probabilistic Perspective</h3>
+<p>将目标检测问题看作学习一个后验概率$P(C,B|I)$，其中$I$是图像表征，$B$是物体的边界框，$C \in {1,…,K}$是物体的类别。</p>
+<p>设用于目标检测的训练样本的联合分布为$P(C, B, I)$，使用$P_S(C, B, I)$和$P_T (C, B, I)$分别表示源域的联合分布和目标域的联合分布。（目标域的B和C未知，但是仍用这个式子表示。）当存在领域偏差时，$P_S(C, B, I) \ne P_T(C, B, I)$。</p>
+<h4 id="Image-Level-Adaptation">Image-Level Adaptation:</h4>
+<p>由贝叶斯公式，将联合分布分解为：</p>
+<p><img src="/2022/03/16/(PaperReader)%20Domain%20Adaptive%20Faster%20R-CNN%20for%20Object%20Detection%20in%20the%20Wild/image-20220315231120708.png" alt="image-20220315231120708"></p>
+<p>与分类问题相似，我们对目标检测任务进行协变量偏移假设，即两个域的条件概率$P (C, B|I)$相同，域分布偏移是由边际分布$P (I)$上的差异引起的。</p>
+<p>换句话说，两个域之间的检测器是一致的：**给定一幅图像，无论该图像属于哪个域，检测结果应该是相同的。**在Faster R-CNN模型中，图像表示$I$实际上是基本卷积层的特征图输出。因此，在处理领域偏移问题时，我们应该使两个域的图像表征的分布相同(即$P_S(I) = P_T(I)$)，称为图像级适应。</p>
+<h4 id="Instance-Level-Adaptation">Instance-Level Adaptation:</h4>
+<p>联合分布也可以分解为：</p>
+<p><img src="/2022/03/16/(PaperReader)%20Domain%20Adaptive%20Faster%20R-CNN%20for%20Object%20Detection%20in%20the%20Wild/image-20220315231129782.png" alt="image-20220315231129782"></p>
+<p>进行协变量偏移假设，即两个域的条件概率$P (C|B,I)$相同，域分布偏移是由边际分布$P (B,I)$上的差异引起的。</p>
+<p>直观地说，这意味着两个领域之间的语义一致性：给定包含一个对象的相同图像区域，不管它来自哪个领域，它的类别标签应该是相同的。因此，我们还可以促使来自两个域的实例表征的分布相同(即$P_S(B, I) = P_T (B, I)$)，称为实例级对齐。</p>
+<h4 id="Joint-Adaptation">Joint Adaptation:</h4>
+<p>考虑$P(B, I) = P(B|I)P(I)$，且假设条件分布$P(B|I)$对于两个域是相同且非零的，则有：</p>
+<p><img src="/2022/03/16/(PaperReader)%20Domain%20Adaptive%20Faster%20R-CNN%20for%20Object%20Detection%20in%20the%20Wild/image-20220315232250361.png" alt="image-20220315232250361"></p>
+<p>换句话说，如果两个域的图像级表示的分布是相同的，那么实例级表示的分布也是相同的，反之亦然。但是，完全准确地估计这样一个条件分布$P(B|I)$是很难的。原因有两方面：</p>
+<ol>
+<li>在实践中，可能很难完美地对齐边际分布$P(I)$，这意味着在估计条件分布$P(B|I)$时的输入在某种程度上是有偏差的。</li>
+<li>边界框标注仅对源域训练数据可用，因此$P(B|I)$是使用源域数据学习的，很容易偏向于源域数据。</li>
+</ol>
+<p>因此，本工作提出在图像级和实例级都进行对齐，并且使用一致性正则化来减轻估计$P(B|I)$时的偏差。</p>
+<p>将领域标签记作$D$，图像级的域判别器可以视作估计$P(D|I)$，实例级的域判别器可以视作估计$P(D|B,I)$。根据贝叶斯理论：</p>
+<p><img src="/2022/03/16/(PaperReader)%20Domain%20Adaptive%20Faster%20R-CNN%20for%20Object%20Detection%20in%20the%20Wild/image-20220315233154412.png" alt="image-20220315233154412"></p>
+<p>$P(B, I)$是域不变的边界框预测器，$P(B|D,I)$是域相关的边界框预测器。回想一下，在实践中，我们只能学习与域相关的边界框预测器$P(B|D,I)$，因为我们没有目标域的边界框标签。但是有了上面的公式，<strong>我们可以通过促使两个域判别器的一致性，即促使$P(D|B,I)=P(D|I)$，来学习一个接近$P(B, I)$的$P(B|D,I)$。</strong></p>
+<h3 id="4-2-Domain-Adaptation-Components">4.2. Domain Adaptation Components</h3>
+<p><img src="/2022/03/16/(PaperReader)%20Domain%20Adaptive%20Faster%20R-CNN%20for%20Object%20Detection%20in%20the%20Wild/image-20220315220439515.png" alt="image-20220315220439515"></p>
+<h4 id="Image-Level-Adaptation-v2">Image-Level Adaptation:</h4>
+<p>绿色部分是Faster R-CNN输出的特征图，在这部分上进行激活，判别器在激活后的结果上进行判别。因为激活后每个值的感受野，都对应原输入图像上的一块图像块，因此域判别器实际上预测的是每个图像块的域标签，域判别器是patch-based的设计。（不是很懂这个激活，是将绿色特征图经过一个激活函数吗？看的几份代码都写得不一样。）</p>
+<p>域判别器patch-based的设计有两个好处：</p>
+<ol>
+<li>类似的基于patch的loss在最近的风格转移研究中显示出了有效的效果，它也处理全局转换。</li>
+<li>在训练目标检测任务时，输入图像的分辨率是比较高的，batch size就会比较小。在训练其中的域分类器时，将整张图改为图像块，增加了它的训练样本的数量。</li>
+</ol>
+<p>$\phi _{u,v}(I_i)$是第i张特征图的(u,v)位置的激活值，$p_i^{(u,v)}$是激活值输入域判别器的结果。使用了交叉熵损失。图像级自适应损失为：</p>
+<p><img src="/2022/03/16/(PaperReader)%20Domain%20Adaptive%20Faster%20R-CNN%20for%20Object%20Detection%20in%20the%20Wild/image-20220315233817335.png" alt="image-20220315233817335"></p>
+<h4 id="Instance-Level-Adaptation-v2">Instance-Level Adaptation:</h4>
+<p>对齐实例级表征有助于减少局部实例的差异，如目标的外观、大小、视角等。与图像级相似，用$p_{i,j}$表示第i张图像的第j个区域。实例级自适应损失为：</p>
+<p><img src="/2022/03/16/(PaperReader)%20Domain%20Adaptive%20Faster%20R-CNN%20for%20Object%20Detection%20in%20the%20Wild/image-20220315235657029.png" alt="image-20220315235657029"></p>
+<h4 id="Consistency-Regularization">Consistency Regularization:</h4>
+<p>这个设计有助于提升边界框预测器（如Faster R-CNN中的RPN）的跨领域鲁棒性。图像级表征为$I$，将图像级域判别器对其所有激活的判别计算一个平均，这个值作为图像级的判别概率。实例级的判别概率则是一张图像的多个实例分别的概率。对图像级判别概率和每个实例级判别概率一一计算L2损失，再求和，作为一致性正则化损失：</p>
+<p><img src="/2022/03/16/(PaperReader)%20Domain%20Adaptive%20Faster%20R-CNN%20for%20Object%20Detection%20in%20the%20Wild/image-20220316000314103.png" alt="image-20220316000314103"></p>
+<h3 id="4-3-Network-Overview">4.3. Network Overview</h3>
+<p><img src="/2022/03/16/(PaperReader)%20Domain%20Adaptive%20Faster%20R-CNN%20for%20Object%20Detection%20in%20the%20Wild/image-20220316000532955.png" alt="image-20220316000532955"></p>
+<h2 id="5-Experiments">5. Experiments</h2>
+<h3 id="5-1-Experiment-Setup">5.1. Experiment Setup</h3>
+<p>每个batch包含两张图像，一张源域带标签，一张目标域无标签。损失函数中系数$\lambda=0.1$。</p>
+<h3 id="5-2-Experimental-Results">5.2. Experimental Results</h3>
+<p>各种实验见论文。。。</p>
+<h2 id="6-Conclusion">6. Conclusion</h2>
+<p>这篇工作提出的方法，能够在一个没有任何标注信息的新领域数据集上，训练得到一个鲁棒的目标检测器。（当然前提是差别不要太大，且要检测的物体种类是一致的。如源域有车和苹果，那目标域也只能检测出车和苹果。）</p>
+
+	
+
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/03/16/(PaperReader)%20Domain%20Adaptive%20Faster%20R-CNN%20for%20Object%20Detection%20in%20the%20Wild/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+ 
+
+
+  
     <article id="post-A Survey of DDAOD" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1159,121 +1289,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/11/03/%E4%B8%80%E4%BA%9B%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%20AI%20%E7%BD%91%E7%AB%99/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
- 
-
-
-  
-    <article id="post-2021.10.29 组会记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/10/29/2021.10.29%20%E7%BB%84%E4%BC%9A%E8%AE%B0%E5%BD%95/">2021.10.29 组会记录</a>
-    </h1>
-  
-
-        
-        <a href="/2021/10/29/2021.10.29%20%E7%BB%84%E4%BC%9A%E8%AE%B0%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2021-10-29T09:23:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-29</time>
-</a>
-     
-
-
-
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">98字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">1分</span>
-      </span>
-    </span>
-</div>
-
-   
-
-
- 
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-
-
-			<p>记录组会内容。</p>
-	
-
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">组会</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/组会记录//" class="article-tag-list-link color5">组会记录</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/10/29/2021.10.29%20%E7%BB%84%E4%BC%9A%E8%AE%B0%E5%BD%95/">展开全文 >></a>
         </p>
       
 
