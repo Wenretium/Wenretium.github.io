@@ -29,7 +29,7 @@
 <meta property="og:image" content="https://wenretium.github.io/2022/03/16/(PaperReader)%20Domain%20Adaptive%20Faster%20R-CNN%20for%20Object%20Detection%20in%20the%20Wild/image-20220316000314103.png">
 <meta property="og:image" content="https://wenretium.github.io/2022/03/16/(PaperReader)%20Domain%20Adaptive%20Faster%20R-CNN%20for%20Object%20Detection%20in%20the%20Wild/image-20220316000532955.png">
 <meta property="article:published_time" content="2022-03-15T16:18:32.000Z">
-<meta property="article:modified_time" content="2022-03-15T16:21:31.221Z">
+<meta property="article:modified_time" content="2022-03-16T00:19:37.840Z">
 <meta property="article:author" content="Wenretium">
 <meta property="article:tag" content="论文笔记">
 <meta property="article:tag" content="DA">
@@ -292,7 +292,7 @@
 <h3 id="4-2-Domain-Adaptation-Components">4.2. Domain Adaptation Components</h3>
 <p><img src="/2022/03/16/(PaperReader)%20Domain%20Adaptive%20Faster%20R-CNN%20for%20Object%20Detection%20in%20the%20Wild/image-20220315220439515.png" alt="image-20220315220439515"></p>
 <h4 id="Image-Level-Adaptation-v2">Image-Level Adaptation:</h4>
-<p>绿色部分是Faster R-CNN输出的特征图，在这部分上进行激活，判别器在激活后的结果上进行判别。因为激活后每个值的感受野，都对应原输入图像上的一块图像块，因此域判别器实际上预测的是每个图像块的域标签，域判别器是patch-based的设计。（不是很懂这个激活，是将绿色特征图经过一个激活函数吗？看的几份代码都写得不一样。）</p>
+<p>绿色部分是Faster R-CNN输出的特征图，在这部分上进行激活，判别器在激活后的结果上进行判别。因为激活后每个值的感受野，都对应原输入图像上的一块图像块，因此域判别器实际上预测的是每个图像块的域标签，域判别器是patch-based的设计。（这里的激活activation是指输入域判别器，经过简单的卷积层和激活函数层）</p>
 <p>域判别器patch-based的设计有两个好处：</p>
 <ol>
 <li>类似的基于patch的loss在最近的风格转移研究中显示出了有效的效果，它也处理全局转换。</li>
