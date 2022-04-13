@@ -15,17 +15,17 @@
 <meta property="og:site_name" content="Wenretium&#39;s Space">
 <meta property="og:description" content="在跟着Hive安装教程时，启动Hive失败，元数据的初始化有问题。我猜测这是因为教程使用的为较旧的MySQL5，而我安装的是MySQL8。虽然跟着这份教程也有几个地方需要做出改动，比如驱动的版本需要更新、mysql的语法不同等，但网络上都能找到答案。这个问题没在网络上找到答案，探索解决之后特此记录。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://wenretium.github.io/2022/04/13/Ubuntu20+MySQL8+Hive%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/C:%5CUsers%5C62574%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20220413222003674.png">
-<meta property="og:image" content="https://wenretium.github.io/2022/04/13/Ubuntu20+MySQL8+Hive%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/C:%5CUsers%5C62574%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20220413222143490.png">
-<meta property="og:image" content="https://wenretium.github.io/2022/04/13/Ubuntu20+MySQL8+Hive%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/image-20220413222639720.png">
-<meta property="og:image" content="https://wenretium.github.io/2022/04/13/Ubuntu20+MySQL8+Hive%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/C:%5CUsers%5C62574%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20220413222423591.png">
-<meta property="og:image" content="https://wenretium.github.io/2022/04/13/Ubuntu20+MySQL8+Hive%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/C:%5CUsers%5C62574%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20220413222448885.png">
+<meta property="og:image" content="https://wenretium.github.io/2022/04/13/Ubuntu20+MySQL8+Hive%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/image-20220413222003674.png">
+<meta property="og:image" content="https://wenretium.github.io/2022/04/13/Ubuntu20+MySQL8+Hive%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/image-20220413222143490.png">
+<meta property="og:image" content="https://wenretium.github.io/2022/04/13/Ubuntu20+MySQL8+Hive%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/image-20220413222639720-16498607988171.png">
+<meta property="og:image" content="https://wenretium.github.io/2022/04/13/Ubuntu20+MySQL8+Hive%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/image-20220413222423591.png">
+<meta property="og:image" content="https://wenretium.github.io/2022/04/13/Ubuntu20+MySQL8+Hive%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/image-20220413222448885.png">
 <meta property="article:published_time" content="2022-04-13T14:37:00.000Z">
-<meta property="article:modified_time" content="2022-04-13T14:38:06.065Z">
+<meta property="article:modified_time" content="2022-04-13T14:40:25.705Z">
 <meta property="article:author" content="Wenretium">
 <meta property="article:tag" content="踩坑">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://wenretium.github.io/2022/04/13/Ubuntu20+MySQL8+Hive%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/C:%5CUsers%5C62574%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20220413222003674.png">
+<meta name="twitter:image" content="https://wenretium.github.io/2022/04/13/Ubuntu20+MySQL8+Hive%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/image-20220413222003674.png">
   
     <link rel="alternative" href="/atom.xml" title="Wenretium&#39;s Space" type="application/atom+xml">
   
@@ -231,18 +231,18 @@
 <p>报错如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Logging initialized using configuration <span class="keyword">in</span> jar:file:/opt/app/hive-2.1.1/lib/hive-common-2.1.1.jar!/hive-log4j2.properties Async: <span class="literal">true</span></span><br><span class="line">Exception <span class="keyword">in</span> thread <span class="string">&quot;main&quot;</span> java.lang.RuntimeException: org.apache.hadoop.hive.ql.metadata.HiveException: java.lang.RuntimeException: Unable to instantiate org.apache.hadoop.hive.ql.metadata.SessionHiveMetaStoreClient</span><br><span class="line">    at org.apache.hadoop.hive.ql.session.SessionState.start(SessionState.java:591)</span><br><span class="line">    at org.apache.hadoop.hive.ql.session.SessionState.beginStart(SessionState.java:531)</span><br><span class="line">    at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:705)</span><br><span class="line">    at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:641)</span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
 <p>执行命令<code>schematool -dbType mysql -initSchema</code>会显示失败。这提醒了我，是不是下面的几项配置之一有问题？</p>
-<p><img src="/2022/04/13/Ubuntu20+MySQL8+Hive%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/C:%5CUsers%5C62574%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20220413222003674.png" alt="image-20220413222003674"></p>
+<p><img src="/2022/04/13/Ubuntu20+MySQL8+Hive%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/image-20220413222003674.png" alt="image-20220413222003674"></p>
 <p>仔细观察<code>/usr/local/hive/conf/hive-site.xml</code>，发现里面有关于账号和密码的配置。因为mysql中设定的密码和配置文件中写的密码不一致，才会访问不上hive数据库。</p>
-<p><img src="/2022/04/13/Ubuntu20+MySQL8+Hive%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/C:%5CUsers%5C62574%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20220413222143490.png" alt="image-20220413222143490"></p>
+<p><img src="/2022/04/13/Ubuntu20+MySQL8+Hive%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/image-20220413222143490.png" alt="image-20220413222143490"></p>
 <p><strong>因此到mysql下，修改hive用户的密码为hive。</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter user &#x27;hive&#x27;@&#x27;localhost&#x27; identified with mysql_native_password by &#x27;hive&#x27;;  </span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
 <p>同时还要注意上面的<code>/usr/local/hive/conf/hive-site.xml</code>文件中，ConnectionDriverName要改成与MySQL8适配，即加上中间的cj.</p>
-<p><img src="/2022/04/13/Ubuntu20+MySQL8+Hive%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/image-20220413222639720.png" alt="image-20220413222639720"></p>
+<p><img src="/2022/04/13/Ubuntu20+MySQL8+Hive%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/image-20220413222639720-16498607988171.png" alt="image-20220413222639720"></p>
 <p>再次执行命令<code>schematool -dbType mysql -initSchema</code>。显示成功。</p>
-<p><img src="/2022/04/13/Ubuntu20+MySQL8+Hive%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/C:%5CUsers%5C62574%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20220413222423591.png" alt="image-20220413222423591"></p>
+<p><img src="/2022/04/13/Ubuntu20+MySQL8+Hive%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/image-20220413222423591.png" alt="image-20220413222423591"></p>
 <p>hive也能成功启动了！</p>
-<p><img src="/2022/04/13/Ubuntu20+MySQL8+Hive%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/C:%5CUsers%5C62574%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20220413222448885.png" alt="image-20220413222448885"></p>
+<p><img src="/2022/04/13/Ubuntu20+MySQL8+Hive%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/image-20220413222448885.png" alt="image-20220413222448885"></p>
 
 	
 
