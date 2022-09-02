@@ -6,22 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://Wenretium.github.io">
-  <title>VS出现标识符未声明和报错语句错位等问题 | Wenretium&#39;s Space</title>
+  <title>GAMES101作业七：路径追踪 | Wenretium&#39;s Space</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="明明定义了变量，却报错未声明标识符；运行到某语句报错，但显示的错误来自旁边的一行语句。">
+  <meta name="description" content="作业七的内容是实现现代光追算法中的路径追踪算法。在完成作业的过程中，犯了好几个错误，相似错误在互联网上没有被提及到，特此记录。如果渲染出的图像跟我的类似，可以尝试debug。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="VS出现标识符未声明和报错语句错位等问题">
-<meta property="og:url" content="https://wenretium.github.io/2022/09/02/VS%E5%87%BA%E7%8E%B0%E6%A0%87%E8%AF%86%E7%AC%A6%E6%9C%AA%E5%A3%B0%E6%98%8E%E5%92%8C%E6%8A%A5%E9%94%99%E8%AF%AD%E5%8F%A5%E9%94%99%E4%BD%8D%E7%AD%89%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:title" content="GAMES101作业七：路径追踪">
+<meta property="og:url" content="https://wenretium.github.io/2022/09/02/GAMES101%E4%BD%9C%E4%B8%9A%E4%B8%83%EF%BC%9A%E8%B7%AF%E5%BE%84%E8%BF%BD%E8%B8%AA/index.html">
 <meta property="og:site_name" content="Wenretium&#39;s Space">
-<meta property="og:description" content="明明定义了变量，却报错未声明标识符；运行到某语句报错，但显示的错误来自旁边的一行语句。">
+<meta property="og:description" content="作业七的内容是实现现代光追算法中的路径追踪算法。在完成作业的过程中，犯了好几个错误，相似错误在互联网上没有被提及到，特此记录。如果渲染出的图像跟我的类似，可以尝试debug。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://wenretium.github.io/2022/09/02/VS%E5%87%BA%E7%8E%B0%E6%A0%87%E8%AF%86%E7%AC%A6%E6%9C%AA%E5%A3%B0%E6%98%8E%E5%92%8C%E6%8A%A5%E9%94%99%E8%AF%AD%E5%8F%A5%E9%94%99%E4%BD%8D%E7%AD%89%E9%97%AE%E9%A2%98/image-20220902011932581.png">
-<meta property="og:image" content="https://wenretium.github.io/2022/09/02/VS%E5%87%BA%E7%8E%B0%E6%A0%87%E8%AF%86%E7%AC%A6%E6%9C%AA%E5%A3%B0%E6%98%8E%E5%92%8C%E6%8A%A5%E9%94%99%E8%AF%AD%E5%8F%A5%E9%94%99%E4%BD%8D%E7%AD%89%E9%97%AE%E9%A2%98/image-20220902012019416.png">
-<meta property="article:published_time" content="2022-09-01T17:13:00.000Z">
-<meta property="article:modified_time" content="2022-09-01T17:22:08.367Z">
+<meta property="og:image" content="https://wenretium.github.io/2022/09/02/GAMES101%E4%BD%9C%E4%B8%9A%E4%B8%83%EF%BC%9A%E8%B7%AF%E5%BE%84%E8%BF%BD%E8%B8%AA/%E5%88%A4%E6%96%AD%E9%94%99%E8%AF%AF.png">
+<meta property="og:image" content="https://wenretium.github.io/2022/09/02/GAMES101%E4%BD%9C%E4%B8%9A%E4%B8%83%EF%BC%9A%E8%B7%AF%E5%BE%84%E8%BF%BD%E8%B8%AA/%E6%9C%9D%E7%89%A9%E4%BD%93%E7%9A%84%E5%85%89%E7%BA%BF%E5%86%99%E9%94%99.png">
+<meta property="og:image" content="https://wenretium.github.io/2022/09/02/GAMES101%E4%BD%9C%E4%B8%9A%E4%B8%83%EF%BC%9A%E8%B7%AF%E5%BE%84%E8%BF%BD%E8%B8%AA/%E5%BF%98%E8%AE%B0%E9%80%80%E5%87%BA.png">
+<meta property="og:image" content="https://wenretium.github.io/2022/09/02/GAMES101%E4%BD%9C%E4%B8%9A%E4%B8%83%EF%BC%9A%E8%B7%AF%E5%BE%84%E8%BF%BD%E8%B8%AA/%E5%AE%8C%E7%BE%8E.png">
+<meta property="og:image" content="https://wenretium.github.io/2022/09/02/GAMES101%E4%BD%9C%E4%B8%9A%E4%B8%83%EF%BC%9A%E8%B7%AF%E5%BE%84%E8%BF%BD%E8%B8%AA/spp64.png">
+<meta property="article:published_time" content="2022-09-02T15:04:00.000Z">
+<meta property="article:modified_time" content="2022-09-02T15:50:16.487Z">
 <meta property="article:author" content="Wenretium">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://wenretium.github.io/2022/09/02/VS%E5%87%BA%E7%8E%B0%E6%A0%87%E8%AF%86%E7%AC%A6%E6%9C%AA%E5%A3%B0%E6%98%8E%E5%92%8C%E6%8A%A5%E9%94%99%E8%AF%AD%E5%8F%A5%E9%94%99%E4%BD%8D%E7%AD%89%E9%97%AE%E9%A2%98/image-20220902011932581.png">
+<meta name="twitter:image" content="https://wenretium.github.io/2022/09/02/GAMES101%E4%BD%9C%E4%B8%9A%E4%B8%83%EF%BC%9A%E8%B7%AF%E5%BE%84%E8%BF%BD%E8%B8%AA/%E5%88%A4%E6%96%AD%E9%94%99%E8%AF%AF.png">
   
     <link rel="alternative" href="/atom.xml" title="Wenretium&#39;s Space" type="application/atom+xml">
   
@@ -169,20 +172,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-VS出现标识符未声明和报错语句错位等问题" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-GAMES101作业七：路径追踪" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      VS出现标识符未声明和报错语句错位等问题
+      GAMES101作业七：路径追踪
     </h1>
   
 
         
-        <a href="/2022/09/02/VS%E5%87%BA%E7%8E%B0%E6%A0%87%E8%AF%86%E7%AC%A6%E6%9C%AA%E5%A3%B0%E6%98%8E%E5%92%8C%E6%8A%A5%E9%94%99%E8%AF%AD%E5%8F%A5%E9%94%99%E4%BD%8D%E7%AD%89%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2022-09-01T17:13:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-02</time>
+        <a href="/2022/09/02/GAMES101%E4%BD%9C%E4%B8%9A%E4%B8%83%EF%BC%9A%E8%B7%AF%E5%BE%84%E8%BF%BD%E8%B8%AA/" class="archive-article-date">
+  	<time datetime="2022-09-02T15:04:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-02</time>
 </a>
      
 
@@ -193,7 +196,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">210字</span>
+        <span class="post-count">626字</span>
       </span>
     </span>
 
@@ -202,7 +205,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">1分</span>
+        <span class="post-count">2分</span>
       </span>
     </span>
 </div>
@@ -222,14 +225,33 @@
 
 
 	
-		<p>明明定义了变量，却报错未声明标识符；运行到某语句报错，但显示的错误来自旁边的一行语句。</p>
+		<p>作业七的内容是实现现代光追算法中的路径追踪算法。在完成作业的过程中，犯了好几个错误，相似错误在互联网上没有被提及到，特此记录。如果渲染出的图像跟我的类似，可以尝试debug。</p>
 <span id="more"></span>
-<p>用VS做GAMES101的作业时，遇到了怪事情：明明定义了变量，却报错未声明标识符；运行到某语句报错，但显示的错误来自旁边的一行语句。</p>
-<p>经过排查规律，<strong>发现在中文注释后的语句都是不生效的</strong>。编译器好像直接无视了这行代码，报错的位置也顺着往前错位了。</p>
-<p>网络查找资料发现，是编码问题导致的。闫老师给的框架中，Scene.cpp这个文件是漏网之鱼，编码为UTF8，<strong>将其改为简体中文编码</strong>，问题解决。</p>
-<p>修改方法：文件–&gt;高级保存选项–&gt;编码</p>
-<img src="/2022/09/02/VS%E5%87%BA%E7%8E%B0%E6%A0%87%E8%AF%86%E7%AC%A6%E6%9C%AA%E5%A3%B0%E6%98%8E%E5%92%8C%E6%8A%A5%E9%94%99%E8%AF%AD%E5%8F%A5%E9%94%99%E4%BD%8D%E7%AD%89%E9%97%AE%E9%A2%98/image-20220902011932581.png" alt="image-20220902011932581" style="zoom:80%;">
-<img src="/2022/09/02/VS%E5%87%BA%E7%8E%B0%E6%A0%87%E8%AF%86%E7%AC%A6%E6%9C%AA%E5%A3%B0%E6%98%8E%E5%92%8C%E6%8A%A5%E9%94%99%E8%AF%AD%E5%8F%A5%E9%94%99%E4%BD%8D%E7%AD%89%E9%97%AE%E9%A2%98/image-20220902012019416.png" alt="image-20220902012019416" style="zoom:80%;">
+<p>作业七的内容是实现现代光追算法中的路径追踪算法。在完成作业的过程中，犯了好几个错误，相似错误在互联网上没有被提及到，特此记录。如果渲染出的图像跟我的类似，可以尝试debug。</p>
+<p>本文仅包含基础部分的debug，不包含bonus。</p>
+<h2 id="整张图像几乎是黑的">整张图像几乎是黑的</h2>
+<p><strong>犯错误位置：没有正确判断光源到点p的路径是否被遮挡</strong></p>
+<p>伪代码中<code>If the ray is not blocked in the middle</code>部分，我开始的实现是：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (block.happened &amp;&amp; block.obj == inter.obj)</span><br><span class="line"><span class="comment">// 从点p向光源方向发射射线，此射线与场景发生了碰撞，且碰撞的是光源</span></span><br></pre></td></tr></table></figure>
+<p>然后发现，渲染出的图像几乎是全黑，很少程序能进入这个条件语句。打印发现，光源的物体是不存在的，即光源不算作物体。于是改成了：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!block.happened)</span><br><span class="line"><span class="comment">// 从点p向光源方向发射射线，此射线没有与场景发生碰撞</span></span><br></pre></td></tr></table></figure>
+<p>渲染出的图像如下：</p>
+<p><img src="/2022/09/02/GAMES101%E4%BD%9C%E4%B8%9A%E4%B8%83%EF%BC%9A%E8%B7%AF%E5%BE%84%E8%BF%BD%E8%B8%AA/%E5%88%A4%E6%96%AD%E9%94%99%E8%AF%AF.png" alt="判断错误"></p>
+<p>仍然，很多渲染程序都被挡在了这个条件判断前。因为光线虽然不会和光源相撞，但会继续运动跟光源后面的物体相撞，绝大部分的光线都是有碰撞即<code>block.happened == True</code>的。</p>
+<p><strong>正确判断语句：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (block.distance - (x - p).<span class="built_in">norm</span>() &gt; <span class="number">-0.001</span>)</span><br><span class="line"><span class="comment">// 计算与其他物体碰撞的距离，是否比两点间距离大</span></span><br></pre></td></tr></table></figure>
+<h2 id="阴影处出现大量白色噪点">阴影处出现大量白色噪点</h2>
+<p><img src="/2022/09/02/GAMES101%E4%BD%9C%E4%B8%9A%E4%B8%83%EF%BC%9A%E8%B7%AF%E5%BE%84%E8%BF%BD%E8%B8%AA/%E6%9C%9D%E7%89%A9%E4%BD%93%E7%9A%84%E5%85%89%E7%BA%BF%E5%86%99%E9%94%99.png" alt="朝物体的光线写错"></p>
+<p>排除了<code>t_enter = t_exit  </code>和<code>pdf</code>过小的问题。<strong>犯错误位置：计算间接光照中，射线构造错误。</strong></p>
+<p>在按照伪代码编程时，错将递归中<code>shade(q, wi)  </code>写成<code>castRay(Ray(q, wi)</code>，实际上应该是<code>castRay(Ray(p, wi)</code>。</p>
+<h2 id="画面整体噪声很多">画面整体噪声很多</h2>
+<p><img src="/2022/09/02/GAMES101%E4%BD%9C%E4%B8%9A%E4%B8%83%EF%BC%9A%E8%B7%AF%E5%BE%84%E8%BF%BD%E8%B8%AA/%E5%BF%98%E8%AE%B0%E9%80%80%E5%87%BA.png" alt="忘记退出"></p>
+<p>这是因为，我没有好好搞清楚函数<code>castRay</code>中参数<code>depth</code>的含义（擦汗），直接在递归中写了0。应该为<code>castRay(Ray(p, wi), depth + 1)</code>，这样会和轮盘法一起限制递归的次数。（可能某些点很容易反复反射，着色次数多了，像素点就会很白）</p>
+<h2 id="最后的效果">最后的效果</h2>
+<p>spp=16：</p>
+<p><img src="/2022/09/02/GAMES101%E4%BD%9C%E4%B8%9A%E4%B8%83%EF%BC%9A%E8%B7%AF%E5%BE%84%E8%BF%BD%E8%B8%AA/%E5%AE%8C%E7%BE%8E.png" alt="完美"></p>
+<p>spp=64：</p>
+<p><img src="/2022/09/02/GAMES101%E4%BD%9C%E4%B8%9A%E4%B8%83%EF%BC%9A%E8%B7%AF%E5%BE%84%E8%BF%BD%E8%B8%AA/spp64.png" alt="spp64"></p>
 
 	
 
@@ -245,7 +267,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/踩坑实录//" class="article-tag-list-link color5">踩坑实录</a>
+        			<a href="/categories/图形学//" class="article-tag-list-link color4">图形学</a>
         		</li>
       		
 		</ul>
@@ -300,7 +322,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://wenretium.github.io/2022/09/02/VS%E5%87%BA%E7%8E%B0%E6%A0%87%E8%AF%86%E7%AC%A6%E6%9C%AA%E5%A3%B0%E6%98%8E%E5%92%8C%E6%8A%A5%E9%94%99%E8%AF%AD%E5%8F%A5%E9%94%99%E4%BD%8D%E7%AD%89%E9%97%AE%E9%A2%98/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://wenretium.github.io/2022/09/02/GAMES101%E4%BD%9C%E4%B8%9A%E4%B8%83%EF%BC%9A%E8%B7%AF%E5%BE%84%E8%BF%BD%E8%B8%AA/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -314,18 +336,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2022/09/02/GAMES101%E4%BD%9C%E4%B8%9A%E4%B8%83%EF%BC%9A%E8%B7%AF%E5%BE%84%E8%BF%BD%E8%B8%AA/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          GAMES101作业七：路径追踪
-        
-      </div>
-    </a>
   
-  
-    <a href="/2022/04/13/Ubuntu20+MySQL8+Hive%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Ubuntu20+MySQL8+Hive可能遇到的问题</div>
+    <a href="/2022/09/02/VS%E5%87%BA%E7%8E%B0%E6%A0%87%E8%AF%86%E7%AC%A6%E6%9C%AA%E5%A3%B0%E6%98%8E%E5%92%8C%E6%8A%A5%E9%94%99%E8%AF%AD%E5%8F%A5%E9%94%99%E4%BD%8D%E7%AD%89%E9%97%AE%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">VS出现标识符未声明和报错语句错位等问题</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -352,7 +365,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B4%E5%BC%A0%E5%9B%BE%E5%83%8F%E5%87%A0%E4%B9%8E%E6%98%AF%E9%BB%91%E7%9A%84"><span class="toc-number">1.</span> <span class="toc-text">整张图像几乎是黑的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%B4%E5%BD%B1%E5%A4%84%E5%87%BA%E7%8E%B0%E5%A4%A7%E9%87%8F%E7%99%BD%E8%89%B2%E5%99%AA%E7%82%B9"><span class="toc-number">2.</span> <span class="toc-text">阴影处出现大量白色噪点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%BB%E9%9D%A2%E6%95%B4%E4%BD%93%E5%99%AA%E5%A3%B0%E5%BE%88%E5%A4%9A"><span class="toc-number">3.</span> <span class="toc-text">画面整体噪声很多</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%90%8E%E7%9A%84%E6%95%88%E6%9E%9C"><span class="toc-number">4.</span> <span class="toc-text">最后的效果</span></a></li></ol>
                     </div>
                 </span>
             </div>
